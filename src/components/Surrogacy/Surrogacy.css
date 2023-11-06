@@ -1,0 +1,154 @@
+.surrogacyMain {
+  background-image: url("../../images/Background.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 852px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 90px;
+}
+.blueVectorDiv {
+  background-image: url("../../images/HomePageImages/Vector.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 152px;
+  position: absolute;
+  bottom: 0;
+}
+.surrogacyMain {
+  font-size: 128px;
+  color: white;
+  font-weight: 600;
+}
+@media all and (max-width: 1301px) {
+  .surrogacyMain {
+    height: 840px;
+  }
+  .blueVectorDiv {
+    height: 150px;
+  }
+  .surrogacyMain {
+    font-size: 126px;
+  }
+}
+@media all and (max-width: 1201px) {
+  .surrogacyMain {
+    height: 830px;
+  }
+  .blueVectorDiv {
+    height: 140px;
+  }
+  .surrogacyMain {
+    font-size: 125px;
+  }
+}
+@media all and (max-width: 1101px) {
+  .surrogacyMain {
+    height: 810px;
+  }
+  .blueVectorDiv {
+    height: 120px;
+  }
+  .surrogacyMain {
+    font-size: 122px;
+  }
+}
+@media all and (max-width: 1001px) {
+  .surrogacyMain {
+    height: 750px;
+  }
+  .blueVectorDiv {
+    height: 100px;
+  }
+  .surrogacyMain {
+    font-size: 115px;
+  }
+}
+@media all and (max-width: 901px) {
+  .surrogacyMain {
+    height: 700px;
+  }
+  .blueVectorDiv {
+    height: 80px;
+  }
+  .surrogacyMain {
+    font-size: 110px;
+  }
+}
+@media all and (max-width: 801px) {
+  .surrogacyMain {
+    height: 600px;
+  }
+  .blueVectorDiv {
+    height: 60px;
+  }
+  .surrogacyMain {
+    font-size: 90px;
+  }
+}
+@media all and (max-width: 701px) {
+  .surrogacyMain {
+    height: 500px;
+    padding-bottom: 60px;
+  }
+  .blueVectorDiv {
+    height: 50px;
+  }
+  .surrogacyMain {
+    font-size: 70px;
+  }
+}
+@media all and (max-width: 601px) {
+  .surrogacyMain {
+    height: 400px;
+    padding-bottom: 60px;
+  }
+  .blueVectorDiv {
+    height: 40px;
+  }
+  .surrogacyMain {
+    font-size: 60px;
+  }
+}
+@media all and (max-width: 501px) {
+  .surrogacyMain {
+    height: 380px;
+    padding-bottom: 30px;
+  }
+  .blueVectorDiv {
+    height: 35px;
+  }
+  .surrogacyMain {
+    font-size: 50px;
+  }
+}
+@media all and (max-width: 401px) {
+  .surrogacyMain {
+    height: 330px;
+    padding-bottom: 30px;
+  }
+  .blueVectorDiv {
+    height: 35px;
+  }
+  .surrogacyMain {
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 331px) {
+  .surrogacyMain {
+    height: 280px;
+    padding-bottom: 30px;
+  }
+  .blueVectorDiv {
+    height: 30px;
+  }
+  .surrogacyMain {
+    font-size: 30px;
+  }
+}

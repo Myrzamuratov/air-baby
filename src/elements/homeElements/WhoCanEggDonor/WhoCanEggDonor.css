@@ -1,0 +1,165 @@
+.whoCanMain {
+  background-color: #edf7fa;
+  color: #0079a1;
+  padding: 60px 0;
+}
+.whoCanMain_header {
+  text-align: center;
+  padding: 60px 0;
+  margin: auto;
+  width: 46%;
+}
+.whoCanMain_header h3 {
+  font-size: 32px;
+  font-weight: 700;
+  padding-bottom: 25px;
+}
+.whoCanMain_header p {
+  font-size: 16px;
+}
+
+.whoCanMain_ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0px;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
+}
+.whoCanMain_li {
+  text-align: center;
+  width: 15%;
+  font-size: 16px;
+}
+
+.whoCanMain_li img {
+  background-color: #0079a1;
+  padding: 15px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+.whoCanMain_li p {
+  margin: auto;
+  width: 50%;
+  margin-top: 10px;
+}
+
+@media all and (max-width: 1500px) {
+  .whoCanMain_ul {
+    width: 75%;
+  }
+  .whoCanMain_li p {
+    width: 55%;
+  }
+}
+@media all and (max-width: 1400px) {
+  .whoCanMain_header {
+    width: 50%;
+  }
+  .whoCanMain_li p {
+    width: 60%;
+  }
+}
+@media all and (max-width: 1300px) {
+  .whoCanMain_header {
+    width: 60%;
+  }
+  .whoCanMain_ul {
+    width: 80%;
+  }
+  .whoCanMain_li {
+    width: 16%;
+  }
+  .whoCanMain_li p {
+    width: 70%;
+  }
+}
+@media all and (max-width: 1200px) {
+  .whoCanMain_ul {
+    width: 90%;
+  }
+  .whoCanMain_li p {
+    width: 75%;
+  }
+}
+@media all and (max-width: 1100px) {
+  .whoCanMain_ul {
+    width: 95%;
+  }
+  .whoCanMain_li p {
+    width: 80%;
+  }
+  .whoCanMain_header {
+    width: 70%;
+  }
+}
+@media all and (max-width: 1000px) {
+  .whoCanMain_ul {
+    width: 90%;
+  }
+  .whoCanMain_li {
+    width: 20%;
+  }
+  .whoCanMain_header {
+    width: 80%;
+  }
+}
+@media all and (max-width: 900px) {
+  .whoCanMain_li {
+    width: 25%;
+  }
+  .whoCanMain_li p {
+    width: 85%;
+    margin-bottom: 20px;
+  }
+  .whoCanMain_header {
+    width: 90%;
+  }
+}
+@media all and (max-width: 800px) {
+  .whoCanMain_header {
+    padding-bottom: 40px;
+  }
+  .whoCanMain_header h3 {
+    font-size: 28px;
+    padding-bottom: 15px;
+  }
+}
+@media all and (max-width: 700px) {
+  .whoCanMain_header {
+    padding-bottom: 30px;
+  }
+  .whoCanMain_header h3 {
+    font-size: 25px;
+  }
+  .whoCanMain_header p {
+    font-size: 14px;
+  }
+  .whoCanMain_li {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 600px) {
+  .whoCanMain_li {
+    width: 30%;
+  }
+}
+@media all and (max-width: 500px) {
+  .whoCanMain_li {
+    width: 33%;
+  }
+}
+@media all and (max-width: 400px) {
+  .whoCanMain_header h3 {
+    font-size: 20px;
+  }
+  .whoCanMain_li {
+    width: 35%;
+    font-size: 13px;
+  }
+  .whoCanMain_header p {
+    font-size: 13px;
+  }
+}

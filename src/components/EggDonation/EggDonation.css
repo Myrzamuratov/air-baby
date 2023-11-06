@@ -1,0 +1,154 @@
+.eggDonationMain {
+  background-image: url("../../images/Background.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 852px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 90px;
+}
+.blueVectorDiv {
+  background-image: url("../../images/HomePageImages/Vector.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 152px;
+  position: absolute;
+  bottom: 0;
+}
+.eggDonationMain {
+  font-size: 128px;
+  color: white;
+  font-weight: 600;
+}
+@media all and (max-width: 1301px) {
+  .eggDonationMain {
+    height: 840px;
+  }
+  .blueVectorDiv {
+    height: 150px;
+  }
+  .eggDonationMain {
+    font-size: 126px;
+  }
+}
+@media all and (max-width: 1201px) {
+  .eggDonationMain {
+    height: 830px;
+  }
+  .blueVectorDiv {
+    height: 140px;
+  }
+  .eggDonationMain {
+    font-size: 125px;
+  }
+}
+@media all and (max-width: 1101px) {
+  .eggDonationMain {
+    height: 810px;
+  }
+  .blueVectorDiv {
+    height: 120px;
+  }
+  .eggDonationMain {
+    font-size: 122px;
+  }
+}
+@media all and (max-width: 1001px) {
+  .eggDonationMain {
+    height: 750px;
+  }
+  .blueVectorDiv {
+    height: 100px;
+  }
+  .eggDonationMain {
+    font-size: 115px;
+  }
+}
+@media all and (max-width: 901px) {
+  .eggDonationMain {
+    height: 700px;
+  }
+  .blueVectorDiv {
+    height: 80px;
+  }
+  .eggDonationMain {
+    font-size: 110px;
+  }
+}
+@media all and (max-width: 801px) {
+  .eggDonationMain {
+    height: 600px;
+  }
+  .blueVectorDiv {
+    height: 60px;
+  }
+  .eggDonationMain {
+    font-size: 90px;
+  }
+}
+@media all and (max-width: 701px) {
+  .eggDonationMain {
+    height: 500px;
+    padding-bottom: 60px;
+  }
+  .blueVectorDiv {
+    height: 50px;
+  }
+  .eggDonationMain {
+    font-size: 70px;
+  }
+}
+@media all and (max-width: 601px) {
+  .eggDonationMain {
+    height: 400px;
+    padding-bottom: 60px;
+  }
+  .blueVectorDiv {
+    height: 40px;
+  }
+  .eggDonationMain {
+    font-size: 60px;
+  }
+}
+@media all and (max-width: 501px) {
+  .eggDonationMain {
+    height: 380px;
+    padding-bottom: 30px;
+  }
+  .blueVectorDiv {
+    height: 35px;
+  }
+  .eggDonationMain {
+    font-size: 50px;
+  }
+}
+@media all and (max-width: 401px) {
+  .eggDonationMain {
+    height: 330px;
+    padding-bottom: 30px;
+  }
+  .blueVectorDiv {
+    height: 35px;
+  }
+  .eggDonationMain {
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 331px) {
+  .eggDonationMain {
+    height: 280px;
+    padding-bottom: 30px;
+  }
+  .blueVectorDiv {
+    height: 30px;
+  }
+  .eggDonationMain {
+    font-size: 30px;
+  }
+}

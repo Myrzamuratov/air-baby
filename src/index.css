@@ -1,13 +1,63 @@
-body {
+/* Сброс стандартных стилей для всех элементов */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Сброс стандартных стилей для ссылок */
+a {
+  text-decoration: none; /* Убирает подчеркивание с ссылок */
+  color: inherit; /* Наследует цвет текста от родительского элемента */
+}
+
+/* Сброс стандартных стилей для списка элементов */
+ul,
+ol {
+  list-style: none; /* Убирает маркеры списка */
+}
+
+/* Сброс стандартных стилей для кнопок */
+button {
+  border: none; /* Убирает границу кнопок */
+  background: none; /* Убирает фон кнопок */
+  cursor: pointer; /* Курсор в руке при наведении на кнопку */
+}
+
+/* Сброс стандартных стилей для текстовых полей ввода */
+input,
+textarea {
+  border: none; /* Убирает границу текстовых полей ввода */
+  background: none; /* Убирает фон текстовых полей ввода */
+  outline: none; /* Убирает обводку при фокусе */
+}
+
+/* Сброс стандартных стилей для изображений */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Избавление от маргина браузера */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Tilda Sans VF", sans-serif;
+}
+input {
+  appearance: none; /* Убрать стандартный стиль внешнего вида элемента (кнопка, чекбокс и др.) */
+  border: none; /* Убрать границу */
+  background: none; /* Убрать фон */
+  padding: 0; /* Убрать отступы */
+  margin: 0; /* Убрать отступы */
+  font: inherit; /* Унаследовать шрифт от родительского элемента */
+  color: inherit; /* Унаследовать цвет текста от родительского элемента */
+  outline: none; /* Убрать обводку при фокусировке (клике) */
+  cursor: pointer; /* Изменить курсор на указатель при наведении */
+  /* Добавьте другие стили, какие вам нужно */
 }

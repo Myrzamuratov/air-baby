@@ -1,0 +1,76 @@
+.navbar_main_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+.navbar_logo_container {
+  width: 214px;
+  height: 130px;
+}
+.navbar_navigate_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  font-size: 24px;
+  color: #0079a1;
+  font-weight: 500;
+}
+.navbar_navigate_container > ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.navbar_authButton_container {
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: space-between;
+  align-items: center;
+  color: #0079a1;
+}
+.navbar_authButton_container_button {
+  text-align: center; /* Выравнивание текста по горизонтали */
+  width: 168px;
+  height: 75px;
+  border-radius: 20px;
+  display: flex; /* Превращаем контейнер в flex-контейнер */
+  justify-content: center; /* Выравнивание по горизонтали */
+  align-items: center; /* Выравнивание по вертикали */
+}
+
+.active {
+  background: #0079a1;
+  color: white;
+}
+
+@media all and (max-width: 1300px) {
+  .navbar_navigate_container {
+    font-size: 20px;
+  }
+  .navbar_logo_container {
+    width: 150px;
+    height: 90px;
+  }
+  .navbar_authButton_container_button {
+    width: 140px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+}
+@media all and (max-width: 1100px) {
+  .navbar_navigate_container {
+    font-size: 18px;
+  }
+  .navbar_logo_container {
+    width: 120px;
+    height: 70px;
+  }
+  .navbar_authButton_container_button {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+}

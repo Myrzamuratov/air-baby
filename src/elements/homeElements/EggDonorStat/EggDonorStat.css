@@ -1,0 +1,138 @@
+.eggDonorStat_main {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+}
+.eggDonorStat_left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #0079a1;
+}
+.eggDonorStat_left h3 {
+  font-size: 64px;
+  width: 72%;
+}
+.eggDonorStat_left_ul {
+  display: flex;
+}
+.eggDonorStat_left_li {
+  margin-right: 70px;
+}
+.eggDonorStat_left_li h4 {
+  font-size: 64px;
+}
+.eggDonorStat_left_li p {
+  font-size: 24px;
+}
+.eggDonorStat_right {
+  width: 50%;
+}
+@media all and (max-width: 1400px) {
+  .eggDonorStat_left h3 {
+    width: 100%;
+  }
+}
+@media all and (max-width: 1200px) {
+  .eggDonorStat_left h3 {
+    font-size: 60px;
+  }
+  .eggDonorStat_left_li h4 {
+    font-size: 60px;
+  }
+}
+@media all and (max-width: 1100px) {
+  .eggDonorStat_left h3 {
+    font-size: 53px;
+  }
+  .eggDonorStat_left_li h4 {
+    font-size: 53px;
+  }
+  .eggDonorStat_left_li p {
+    font-size: 20px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .eggDonorStat_left h3 {
+    font-size: 48px;
+  }
+  .eggDonorStat_left_li h4 {
+    font-size: 48px;
+  }
+}
+@media all and (max-width: 900px) {
+  .eggDonorStat_left h3 {
+    font-size: 40px;
+  }
+  .eggDonorStat_left_li h4 {
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 799px) {
+  .eggDonorStat_left h3 {
+    font-size: 37px;
+  }
+  .eggDonorStat_left_li h4 {
+    font-size: 37px;
+  }
+  .eggDonorStat_left_li p {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 699px) {
+  .eggDonorStat_left h3 {
+    font-size: 33px;
+  }
+  .eggDonorStat_left_li h4 {
+    font-size: 33px;
+  }
+  .eggDonorStat_left_li p {
+    font-size: 11px;
+  }
+}
+@media all and (max-width: 599px) {
+  .eggDonorStat_main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .eggDonorStat_left {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .eggDonorStat_left_ul {
+    display: flex;
+    justify-content: center;
+  }
+  .eggDonorStat_left_li {
+    margin: 0;
+    padding: 15px;
+  }
+  .eggDonorStat_left_li h4 {
+    width: 100%;
+    text-align: center;
+  }
+  .eggDonorStat_right {
+    width: 80%;
+  }
+}
+@media all and (max-width: 499px) {
+  .eggDonorStat_left {
+    width: 90%;
+  }
+  .eggDonorStat_left h3 {
+    font-size: 30px;
+  }
+  .eggDonorStat_left_li {
+    padding: 10px;
+  }
+  .eggDonorStat_left_li h4 {
+    font-size: 30px;
+  }
+  .eggDonorStat_right {
+    width: 100%;
+  }
+}

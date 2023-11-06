@@ -1,0 +1,152 @@
+.mainBackground {
+  background-image: url("../../images/Background.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100vh; /* Высота 100vh для заполнения всей видимой области */
+  overflow: hidden; /* Отключить вертикальную прокрутку */
+  position: relative;
+}
+
+.vectorBackground {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center; /* Выравнивание по центру по горизонтали */
+}
+
+.vectorBackground img {
+  width: 100%; /* Растягиваем изображение на всю ширину .vectorBackground */
+  max-width: 100%; /* Ограничиваем максимальную ширину изображения */
+  height: 152px;
+}
+.registerModalContainer {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100; /* Установите высокий z-index для модального окна */
+  /* Другие стили модального окна */
+}
+
+.registerFormContainer {
+  background-color: white;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  border-radius: 15px;
+}
+.registerFormContainer h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.registerFormContainer h3 {
+  color: #465675;
+  font-size: 14px;
+  font-weight: 700;
+}
+.registerFormContainer_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.registerFormContainer_form input {
+  width: 90%;
+  border: 1px #465675 solid;
+  border-radius: 8px;
+  padding: 15px 10px;
+  margin: 15px 0;
+}
+.inputError {
+  color: red;
+  margin-bottom: -10px;
+}
+.checkbox {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  text-decoration: underline;
+  color: blue;
+}
+
+#ch1 {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin-right: 10px;
+}
+#ch1:checked {
+  background-color: #0079a1;
+}
+.errCheckbox {
+  color: red;
+}
+.registerFormContainer_form Button {
+  width: 90%;
+  background-color: #0079a1;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+.registerFormContainer_form Button:hover {
+  background-color: #3486a1;
+}
+.registerFormContainer h4 {
+  color: #465675;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+.registerFormContainer NavLink {
+  font-size: 15px;
+  text-decoration: underline;
+}
+/* !Адаптивка */
+@media all and (max-width: 1400px) {
+  .registerModalContainer {
+    width: 30%;
+    padding: 15px;
+    margin: 50px 0;
+  }
+  .registerFormContainer_form input {
+    margin: 10px 0;
+  }
+  .vectorBackground img {
+    height: 100px;
+  }
+}
+@media all and (max-width: 1200px) {
+  .registerModalContainer {
+    width: 40%;
+    padding: 10px;
+    margin: 50px 0;
+  }
+  .registerFormContainer_form input {
+    margin: 8px 0;
+  }
+  .vectorBackground img {
+    height: 90px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .registerModalContainer {
+    width: 50%;
+    padding: 10px;
+    margin: 50px 0;
+  }
+  .registerFormContainer_form input {
+    margin: 8px 0;
+  }
+  .vectorBackground img {
+    height: 90px;
+  }
+}

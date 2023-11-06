@@ -1,0 +1,206 @@
+.howToBe_main {
+  padding: 100px 0;
+  margin: auto;
+  width: 90%;
+  text-align: center;
+  color: #0079a1;
+}
+.howToBe_header {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+.howToBe_ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.howToBe_li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  margin: 10px;
+  margin-bottom: 25px;
+}
+.howToBe_li h4 {
+  background-color: #0079a1;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: -20px;
+  position: relative;
+}
+.howToBe_li_text {
+  background-color: #edf7fa;
+  border-radius: 15px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.howToBe_li_text h5 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.howToBe_li_text p {
+  font-size: 15px;
+  width: 65%;
+  line-height: 1.5;
+}
+@media all and (max-width: 1500px) {
+  .howToBe_li_text p {
+    width: 80%;
+  }
+}
+
+@media all and (max-width: 1400px) {
+  .howToBe_li_text p {
+    width: 85%;
+  }
+}
+
+@media all and (max-width: 1300px) {
+  .howToBe_li {
+    width: 40%;
+  }
+  .howToBe_li_text {
+    padding: 30px;
+  }
+  .howToBe_li_text p {
+    width: 90%;
+  }
+}
+@media all and (max-width: 1200px) {
+  .howToBe_li {
+    width: 42%;
+  }
+  .howToBe_li_text {
+    padding: 28px;
+  }
+  .howToBe_header {
+    font-size: 38px;
+  }
+  .howToBe_li h4 {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .howToBe_main {
+    width: 95%;
+  }
+  .howToBe_li {
+    width: 45%;
+  }
+  .howToBe_li_text h5 {
+    font-size: 18px;
+  }
+  .howToBe_li_text p {
+    font-size: 12px;
+  }
+}
+@media all and (max-width: 900px) {
+  .howToBe_header {
+    font-size: 32px;
+  }
+  .howToBe_li_text {
+    height: 300px;
+  }
+  .howToBe_li_text h5 {
+    margin-bottom: 5px;
+  }
+  .howToBe_li h4 {
+    width: 40px;
+    height: 40px;
+    line-height: 42px;
+    font-size: 18px;
+  }
+}
+@media all and (max-width: 800px) {
+  .howToBe_header {
+    font-size: 30px;
+  }
+  .howToBe_li h4 {
+    font-size: 15px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+  }
+  .howToBe_li_text h5 {
+    font-size: 18px;
+  }
+  .howToBe_li_text {
+    height: 300px;
+    padding: 24px 10px;
+  }
+}
+@media all and (max-width: 700px) {
+  .howToBe_li {
+    margin-bottom: 10px;
+    width: 46%;
+  }
+  .howToBe_li_text {
+    height: 280px;
+  }
+  .howToBe_li h4 {
+    margin-bottom: -10px;
+  }
+}
+@media all and (max-width: 620px) {
+  .howToBe_li {
+    width: 70%;
+  }
+  .howToBe_li_text {
+    height: 250px;
+    padding: 24px 15px;
+  }
+  .howToBe_li h4 {
+    margin-bottom: -15px;
+  }
+  .howToBe_header {
+    font-size: 25px;
+    margin-bottom: 25px;
+  }
+}
+@media all and (max-width: 500px) {
+  .howToBe_header {
+    font-size: 22px;
+  }
+  .howToBe_li {
+    width: 80%;
+  }
+  .howToBe_li_text {
+    height: 280px;
+  }
+}
+@media all and (max-width: 400px) {
+  .howToBe_header {
+    font-size: 20px;
+  }
+  .howToBe_li {
+    width: 95%;
+  }
+  .howToBe_li_text {
+    padding: 25px 10px;
+  }
+  .howToBe_li_text h5 {
+    font-size: 15px;
+  }
+  .howToBe_li h4 {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+  }
+  .howToBe_li_text p {
+    width: 100%;
+  }
+}
