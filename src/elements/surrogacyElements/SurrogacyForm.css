@@ -61,3 +61,104 @@
   color: white;
   border: 2px solid #0079a1;
 }
+@media all and (max-width: 1200px) {
+  .surrogacyMainDiv {
+    padding: 40px;
+  }
+  .surrogacyFormHeader {
+    font-size: 36px;
+  }
+  .inputDiv {
+    width: 47%;
+    margin: 12px;
+  }
+  #bigInput {
+    width: 96%;
+  }
+  #aloneInput {
+    width: 48%;
+  }
+  .inputDiv label {
+    font-size: 18px;
+  }
+  .inputDiv input {
+    padding: 14px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .surrogacyMainDiv {
+    padding: 40x;
+  }
+  .surrogacyFormHeader {
+    font-size: 36px;
+  }
+  .inputDiv {
+    width: 95%;
+    margin: 12px;
+  }
+  #aloneInput {
+    width: 100%;
+  }
+  .inputDiv label {
+    font-size: 18px;
+  }
+  .inputDiv input {
+    padding: 14px;
+  }
+  .inputDiv select {
+    padding: 14px;
+  }
+  #checkbox {
+    font-size: 10px;
+  }
+}
+@media all and (max-width: 800px) {
+  .surrogacyMainDiv {
+    padding: 25px;
+  }
+  .surrogacyFormHeader {
+    font-size: 32px;
+  }
+  .inputDiv {
+    width: 100%;
+    margin: 12px;
+  }
+  .inputDiv label {
+    font-size: 15px;
+  }
+  .inputDiv input {
+    padding: 12px;
+    font-size: 13px;
+  }
+  .inputDiv select {
+    padding: 12px;
+    font-size: 13px;
+  }
+}
+@media all and (max-width: 600px) {
+  .surrogacyMainDiv {
+    padding: 20px;
+    margin-top: 25px;
+  }
+}
+@media all and (max-width: 500px) {
+  .inputDiv input {
+    padding: 12px;
+    font-size: 10px;
+  }
+  .inputDiv select {
+    padding: 12px;
+    font-size: 10px;
+  }
+}
+@media all and (max-width: 400px) {
+  .surrogacyMainDiv {
+    padding: 10px;
+  }
+  .surrogacyFormHeader {
+    font-size: 25px;
+  }
+  .inputDiv label {
+    font-size: 13px;
+  }
+}

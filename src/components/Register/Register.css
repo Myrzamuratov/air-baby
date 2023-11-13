@@ -7,6 +7,9 @@
   height: 100vh; /* Высота 100vh для заполнения всей видимой области */
   overflow: hidden; /* Отключить вертикальную прокрутку */
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .vectorBackground {
@@ -28,12 +31,6 @@
   width: 25%;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100; /* Установите высокий z-index для модального окна */
-  /* Другие стили модального окна */
 }
 
 .registerFormContainer {
@@ -146,7 +143,60 @@
   .registerFormContainer_form input {
     margin: 8px 0;
   }
-  .vectorBackground img {
-    height: 90px;
+  .vectorBackground {
+    display: none;
+  }
+}
+@media all and (max-width: 900px) {
+  .registerModalContainer {
+    width: 60%;
+  }
+}
+@media all and (max-width: 800px) {
+  .registerModalContainer {
+    width: 70%;
+  }
+}
+@media all and (max-width: 700px) {
+  .registerModalContainer {
+    width: 75%;
+  }
+}
+@media all and (max-width: 600px) {
+  .registerModalContainer {
+    width: 80%;
+  }
+}
+@media all and (max-width: 500px) {
+  .registerFormContainer_form Button {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .registerFormContainer_form input {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .mainBackground {
+    height: 400px;
+  }
+}
+@media all and (max-width: 400px) {
+  .registerModalContainer {
+    width: 90%;
+  }
+  .registerFormContainer h2 {
+    font-size: 17px;
+  }
+  .registerFormContainer h3 {
+    font-size: 12px;
+  }
+  .registerFormContainer h4 {
+    font-size: 12px;
+  }
+  .checkbox label {
+    font-size: 12px;
+  }
+  .sing_nav {
+    font-size: 12px;
   }
 }

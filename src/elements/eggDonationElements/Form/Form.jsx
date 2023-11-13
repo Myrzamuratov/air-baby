@@ -4,6 +4,9 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Slider from "@mui/material/Slider";
 import { useForm } from "../../../context/FormContextProvider";
+import { useLang } from "../../../context/LangContextProvider";
+import { logRoles } from "@testing-library/react";
+import ExamplePhotos from "../../ExamplePhotos/ExamplePhotos";
 
 const Form = () => {
   const [firstName, setFirstName] = useState("");
@@ -176,31 +179,37 @@ const Form = () => {
         break;
     }
   };
+  useEffect(() => {
+    console.log(education);
+  }, [education]);
+  const { lang, translationsEgg } = useLang();
   return (
     <div className="eggDonationMainDiv">
       <div className="eggDonationForm">
-        <h3 className="eggDonationFormHeader">Donation form</h3>
+        <h3 className="eggDonationFormHeader">
+          {translationsEgg.donationForm}
+        </h3>
         <div className="eggDonationFormBody">
           <div className="inputDiv">
-            <label>First name</label>
+            <label>{translationsEgg.firstName}</label>
             <input
               type="text"
-              placeholder="First name"
+              placeholder={translationsEgg.firstName}
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
           <div className="inputDiv">
-            <label>Last name</label>
+            <label>{translationsEgg.lastName}</label>
             <input
               type="text"
-              placeholder="Last name"
+              placeholder={translationsEgg.lastName}
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
           <div className="inputDiv">
-            <label>Date of birth</label>
+            <label>{translationsEgg.dateOfBirth}</label>
             <input
               name="birthDate"
               type="date"
@@ -210,7 +219,7 @@ const Form = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Date of Menstrual Cycle</label>
+            <label>{translationsEgg.dateOfMenstrualCycle}</label>
             <input
               name="menstrualDate"
               type="date"
@@ -220,7 +229,7 @@ const Form = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Nationality</label>
+            <label>{translationsEgg.nationality}</label>
             <input
               type="text"
               placeholder="Type"
@@ -229,7 +238,7 @@ const Form = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Country of Residence</label>
+            <label>{translationsEgg.countryOfResidence}</label>
             <input
               type="text"
               placeholder="Type"
@@ -238,45 +247,21 @@ const Form = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Education</label>
+            <label>{translationsEgg.education}</label>
             <select
               value={education}
               onChange={(e) => setEducation(e.target.value)}
             >
               <option value="">Type</option>
-              <option value="no_education">No education</option>
-              <option value="early_childhood_education">
-                Early childhood education
-              </option>
-              <option value="primary_education">Primary eduation</option>
-              <option value="lower_secondary_educatoin">
-                Lower secondary education
-              </option>
-              <option value="upper_secondary_education">
-                Upper secondary education
-              </option>
-              <option value="post-secondary_non-tertiary_education">
-                Post secondary non tertiary education
-              </option>
-              <option value="short-cycle_tertiary_education">
-                Short cycle tertiary eduation
-              </option>
-              <option value="bachelor's_or_equivalent_level">
-                Bachelor's or equivalent level
-              </option>
-              <option value="master's_or_equivalent_level">
-                Master's or equivalent level
-              </option>
-              <option value="doctoral_or_equivalent_level">
-                Doctoral or equivalent level
-              </option>
-              <option value="not_elsewhere_classified">
-                Not elsewhere classified
-              </option>
+              {translationsEgg.educationValues.map((item) => (
+                <option key={item.name} value={item.value}>
+                  {item.name}
+                </option>
+              ))}
             </select>
           </div>
           <div className="inputDiv">
-            <label>Current job</label>
+            <label>{translationsEgg.currentJob}</label>
             <input
               type="text"
               placeholder="Type"
@@ -285,7 +270,9 @@ const Form = () => {
             />
           </div>
           <div className="inputDiv" id="checkboxDiv">
-            <label style={{ textAlign: "start" }}>Marital status</label>
+            <label style={{ textAlign: "start" }}>
+              {translationsEgg.maritalStatus}
+            </label>
             <FormControlLabel
               style={{ display: "flex", justifyContent: "start" }}
               control={
@@ -296,7 +283,13 @@ const Form = () => {
                   name="Single"
                 />
               }
-              label="Single"
+              label={
+                lang === "en"
+                  ? "Single"
+                  : lang === "ru"
+                  ? "Холост/Не замужем"
+                  : "单身"
+              }
             />
             <FormControlLabel
               style={{ display: "flex", justifyContent: "start" }}
@@ -308,7 +301,13 @@ const Form = () => {
                   name="Married"
                 />
               }
-              label="Married"
+              label={
+                lang === "en"
+                  ? "Married"
+                  : lang === "ru"
+                  ? "Замужем/Женат"
+                  : "已婚"
+              }
             />
             <FormControlLabel
               style={{ display: "flex", justifyContent: "start" }}
@@ -320,7 +319,13 @@ const Form = () => {
                   name="Widowed"
                 />
               }
-              label="Widowed"
+              label={
+                lang === "en"
+                  ? "Widowed"
+                  : lang === "ru"
+                  ? "Вдовец/Вдова"
+                  : "寡居"
+              }
             />
             <FormControlLabel
               style={{ display: "flex", justifyContent: "start" }}
@@ -332,11 +337,19 @@ const Form = () => {
                   name="Divorced"
                 />
               }
-              label="Divorced"
+              label={
+                lang === "en"
+                  ? "Divorced"
+                  : lang === "ru"
+                  ? "Разведен/Разведена"
+                  : "离婚"
+              }
             />
           </div>
           <div className="inputDiv" id="checkboxDiv">
-            <label style={{ textAlign: "start" }}>Experience of Donation</label>
+            <label style={{ textAlign: "start" }}>
+              {translationsEgg.experienceOfDonation}
+            </label>
             <FormControlLabel
               style={{ display: "flex", justifyContent: "start" }}
               control={
@@ -347,7 +360,7 @@ const Form = () => {
                   name="Yes"
                 />
               }
-              label="Yes"
+              label={lang === "en" ? "Yes" : lang === "ru" ? "Да" : "是"}
             />
             <FormControlLabel
               style={{ display: "flex", justifyContent: "start" }}
@@ -359,11 +372,13 @@ const Form = () => {
                   name="No"
                 />
               }
-              label="No"
+              label={lang === "en" ? "No" : lang === "ru" ? "Нет" : "没有"}
             />
           </div>
           <div className="inputDiv" id="checkboxDiv">
-            <label style={{ textAlign: "start" }}>Willingness to travel</label>
+            <label style={{ textAlign: "start" }}>
+              {translationsEgg.willingnessToTravel}
+            </label>
             <FormControlLabel
               style={{ display: "flex", justifyContent: "start" }}
               control={
@@ -374,7 +389,7 @@ const Form = () => {
                   name="Yes"
                 />
               }
-              label="Yes"
+              label={lang === "en" ? "Yes" : lang === "ru" ? "Да" : "是"}
             />
             <FormControlLabel
               style={{ display: "flex", justifyContent: "start" }}
@@ -386,30 +401,35 @@ const Form = () => {
                   name="No"
                 />
               }
-              label="No"
+              label={lang === "en" ? "No" : lang === "ru" ? "Нет" : "没有"}
             />
           </div>
         </div>
       </div>
       <div className="eggDonationForm">
-        <h3 className="eggDonationFormHeader">Physical Characteristics</h3>
+        <h3 className="eggDonationFormHeader">
+          {translationsEgg.physicalCharacteristics}
+        </h3>
         <div className="eggDonationFormBody">
           <div className="inputDiv" id="bigInput">
-            <label>Blood type, Rh factor</label>
+            <label>{translationsEgg.bloodType}</label>
             <select
               value={bloodType}
               onChange={(e) => setBloodType(e.target.value)}
               id="aloneInput"
             >
               <option value="">Type</option>
-              <option value="o_RhD_positive">O(I)</option>
-              <option value="a_RhD_positive">A(II)</option>
-              <option value="b_RhD_positive">B(III)</option>
-              <option value="ab_RhD_positive">AB(IV)</option>
+              {translationsEgg.bloodTypeValues.map((item) => (
+                <option key={item.name} value={item.value}>
+                  {item.name}
+                </option>
+              ))}
             </select>
           </div>
           <div className="inputDiv">
-            <label>Height {height} sm</label>
+            <label>
+              {translationsEgg.height} {height} sm
+            </label>
             <Slider
               style={{ color: "#0079A1" }}
               value={height}
@@ -422,7 +442,9 @@ const Form = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Weight {weight} kg</label>
+            <label>
+              {translationsEgg.weight} {weight} kg
+            </label>
             <Slider
               style={{ color: "#0079A1" }}
               value={weight}
@@ -435,7 +457,7 @@ const Form = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Eye color</label>
+            <label>{translationsEgg.eyeColor}</label>
             <input
               type="text"
               placeholder="Type"
@@ -444,7 +466,7 @@ const Form = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Hair color</label>
+            <label>{translationsEgg.hairColor}</label>
             <input
               type="text"
               placeholder="Type"
@@ -455,11 +477,13 @@ const Form = () => {
         </div>
         <div className="eggDonationForm">
           <h3 className="eggDonationFormHeader">
-            Information about children/family
+            {translationsEgg.infoAboutChildren}
           </h3>
           <div className="eggDonationFormBody">
             <div className="inputDiv">
-              <label>Number of children: {children} </label>
+              <label>
+                {translationsEgg.numberOfChildren}: {children}
+              </label>
               <Slider
                 style={{ color: "#0079A1" }}
                 value={children}
@@ -472,7 +496,9 @@ const Form = () => {
               />
             </div>
             <div className="inputDiv">
-              <label>Number of Siblings: {siblings} </label>
+              <label>
+                {translationsEgg.numberOfSiblings}: {siblings}{" "}
+              </label>
               <Slider
                 style={{ color: "#0079A1" }}
                 value={siblings}
@@ -485,7 +511,7 @@ const Form = () => {
               />
             </div>
             <div className="inputDiv">
-              <label>Mother’s Hair Color</label>
+              <label>{translationsEgg.mothersHairColor}</label>
               <input
                 type="text"
                 placeholder="Type"
@@ -494,7 +520,7 @@ const Form = () => {
               />
             </div>
             <div className="inputDiv">
-              <label>Mother’s Eye Color</label>
+              <label>{translationsEgg.mothersEyeColor}</label>
               <input
                 type="text"
                 placeholder="Type"
@@ -503,7 +529,7 @@ const Form = () => {
               />
             </div>
             <div className="inputDiv">
-              <label>Father’s Hair Color</label>
+              <label>{translationsEgg.fathersHairColor}</label>
               <input
                 type="text"
                 placeholder="Type"
@@ -512,7 +538,7 @@ const Form = () => {
               />
             </div>
             <div className="inputDiv">
-              <label>Father’s Eye Color</label>
+              <label>{translationsEgg.fathersEyeColor}</label>
               <input
                 type="text"
                 placeholder="Type"
@@ -521,7 +547,7 @@ const Form = () => {
               />
             </div>
             <div className="inputDiv">
-              <label>Hobby</label>
+              <label>{translationsEgg.hobby}</label>
               <input
                 type="text"
                 placeholder="Type"
@@ -530,20 +556,23 @@ const Form = () => {
               />
             </div>
             <div className="inputDiv">
-              <label>Personality type</label>
+              <label>{translationsEgg.personalityType}</label>
               <select
                 value={personalityType}
                 onChange={(e) => setPersonalityType(e.target.value)}
               >
                 <option value="">Type</option>
-                <option value="sanguine">Sanguine</option>
-                <option value="choleric">Choleric</option>
-                <option value="phlegmatic">Phlegmatic</option>
-                <option value="melancholic">Melancholic</option>
+                {translationsEgg.personalityTypeValues.map((item) => (
+                  <option key={item.name} value={item.value}>
+                    {item.name}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="inputDiv" id="bigInput">
-              <label style={{ textAlign: "start" }}>Health Status</label>
+              <label style={{ textAlign: "start" }}>
+                {translationsEgg.healthStatus}
+              </label>
               <FormControlLabel
                 style={{ display: "flex", justifyContent: "start" }}
                 control={
@@ -554,7 +583,13 @@ const Form = () => {
                     name="Healthy"
                   />
                 }
-                label="Healthy"
+                label={
+                  lang === "en"
+                    ? "Healthy"
+                    : lang === "ru"
+                    ? "Здоровый"
+                    : "健康"
+                }
               />
               <FormControlLabel
                 style={{ display: "flex", justifyContent: "start" }}
@@ -567,57 +602,83 @@ const Form = () => {
                     name="Not healthy"
                   />
                 }
-                label="Not healthy"
+                label={
+                  lang === "en"
+                    ? "Not healthy"
+                    : lang === "ru"
+                    ? "Нездоровый"
+                    : "不健康"
+                }
               />
             </div>
-            <div className="inputDiv">
-              <label>Face photo</label>
-              <input
-                type="file"
-                onChange={handleFileChange}
-                name="facePhoto"
-                placeholder="Type"
-              />
-            </div>
-            <div className="inputDiv">
-              <label>Photo from the side</label>
-              <input
-                type="file"
-                onChange={handleFileChange}
-                name="sidePhoto"
-                placeholder="Type"
-              />
-            </div>
-            <div className="inputDiv">
-              <label>Full body photo</label>
-              <input
-                type="file"
-                id="aloneInput"
-                onChange={handleFileChange}
-                name="fullbodyPhoto"
-                placeholder="Type"
-              />
-            </div>
-            {facePhotoPreview || sidePhotoPreview || fullBodyPhotoPreview ? (
-              <div className="inputDiv" id="photoDiv">
-                <div>
-                  <img src={facePhotoPreview} alt="Face photo Preview" />
-                </div>
-                <div>
-                  <img src={sidePhotoPreview} alt="Side photo Preview" />
-                </div>
-                <div>
-                  <img src={fullBodyPhotoPreview} alt="Full photo Preview" />
-                </div>
+            <div className="image_input_div">
+              <label>{translationsEgg.facePhoto}</label>
+
+              <div className="image_input">
+                <input
+                  type="file"
+                  onChange={handleFileChange}
+                  name="facePhoto"
+                  placeholder="Type"
+                />
+                {facePhotoPreview ? (
+                  <div className="image_div">
+                    <img src={facePhotoPreview} alt="Face photo Preview" />
+                  </div>
+                ) : (
+                  <div className="image_div">{translationsEgg.photo}</div>
+                )}
               </div>
-            ) : null}
+            </div>
+
+            <div className="image_input_div">
+              <label>{translationsEgg.sidePhoto}</label>
+
+              <div className="image_input">
+                <input
+                  type="file"
+                  onChange={handleFileChange}
+                  name="sidePhoto"
+                  placeholder="Type"
+                />
+                {sidePhotoPreview ? (
+                  <div className="image_div">
+                    <img src={sidePhotoPreview} alt="Side photo Preview" />
+                  </div>
+                ) : (
+                  <div className="image_div">{translationsEgg.photo}</div>
+                )}
+              </div>
+            </div>
+
+            <div className="image_input_div" id="bigInput">
+              <label>{translationsEgg.fullBodyPhoto}</label>
+              <div className="image_input">
+                <input
+                  type="file"
+                  onChange={handleFileChange}
+                  name="fullbodyPhoto"
+                  placeholder="Type"
+                />
+                {fullBodyPhotoPreview ? (
+                  <div className="image_div">
+                    <img src={fullBodyPhotoPreview} alt="Full photo Preview" />
+                  </div>
+                ) : (
+                  <div className="image_div">{translationsEgg.photo}</div>
+                )}
+              </div>
+            </div>
+            <ExamplePhotos />
           </div>
         </div>
         <div className="eggDonationForm">
-          <h3 className="eggDonationFormHeader">Contact Data</h3>
+          <h3 className="eggDonationFormHeader">
+            {translationsEgg.contactData}
+          </h3>
           <div className="eggDonationFormBody">
             <div className="inputDiv">
-              <label>Phone number</label>
+              <label>{translationsEgg.phoneNumber}</label>
               <input
                 type="text"
                 value={phoneNumber}
@@ -626,7 +687,7 @@ const Form = () => {
               />
             </div>
             <div className="inputDiv">
-              <label>Email</label>
+              <label>{translationsEgg.email}</label>
               <input
                 type="email"
                 value={email}
@@ -635,7 +696,7 @@ const Form = () => {
               />
             </div>
             <div className="inputDiv" id="bigInput">
-              <label>Comment or Message</label>
+              <label>{translationsEgg.comment}</label>
               <input
                 type="text"
                 value={comment}
@@ -647,9 +708,11 @@ const Form = () => {
         </div>
         <div>
           <button className="surrogacy_button" onClick={handleSave}>
-            Submit
+            {translationsEgg.submitButton}
           </button>
-          <button className="surrogacy_button">Save</button>
+          <button className="surrogacy_button">
+            {translationsEgg.saveButton}
+          </button>
         </div>
       </div>
     </div>

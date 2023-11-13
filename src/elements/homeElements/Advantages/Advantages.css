@@ -17,7 +17,7 @@
 }
 
 .advanteges_list_li {
-  width: 20%;
+  width: 21%;
   font-size: 20px;
   padding: 50px 30px;
   background-color: #edf7fa;
@@ -33,6 +33,7 @@
 .advanteges_list_li h3 {
   font-weight: 800;
   margin-bottom: 10px;
+  text-align: center;
 }
 .advanteges_list_li p {
   text-align: center;

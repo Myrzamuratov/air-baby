@@ -24,3 +24,100 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.image_input_div {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+}
+.image_input_div label {
+  font-size: 20px;
+}
+.image_input {
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  height: 300px;
+}
+.image_input input {
+  border: 1px solid #d9d9d9;
+  padding: 15px;
+}
+.image_div {
+  height: 280px;
+  display: flex;
+  align-items: center;
+}
+
+.image_div img {
+  height: 280px;
+}
+@media all and (max-width: 1500px) {
+  .image_input input {
+    width: 24%;
+    padding: 10px;
+  }
+}
+@media all and (max-width: 1200px) {
+  .image_input input {
+    font-size: 10px;
+    height: 280px;
+    padding: 120px 0;
+  }
+  .eggDonationMain {
+    padding: 45px;
+  }
+  .eggDonationFormHeader {
+    font-size: 37px;
+  }
+  .eggDonationFormBody {
+    margin: 23px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .image_input_div {
+    width: 90%;
+  }
+  .image_input input {
+    font-size: 15px;
+  }
+  .eggDonationMain {
+    padding: 30px;
+  }
+  .eggDonationFormHeader {
+    font-size: 32px;
+  }
+  .eggDonationFormBody {
+    margin: 20px;
+  }
+}
+@media all and (max-width: 800px) {
+  .eggDonationMain {
+    padding: 28px;
+  }
+  .eggDonationFormHeader {
+    font-size: 31px;
+  }
+  .eggDonationFormBody {
+    margin: 18px;
+  }
+}
+@media all and (max-width: 700px) {
+  .eggDonationMain {
+    padding: 25px;
+  }
+  .eggDonationFormHeader {
+    font-size: 30px;
+  }
+  .eggDonationFormBody {
+    margin: 16px;
+  }
+  #checkboxDiv {
+    width: 20%;
+  }
+}
+@media all and (max-width: 500px) {
+}
+@media all and (max-width: 400px) {
+}

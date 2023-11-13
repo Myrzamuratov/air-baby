@@ -26,129 +26,46 @@
   color: white;
   font-weight: 600;
 }
-@media all and (max-width: 1301px) {
+@media all and (max-width: 1200px) {
   .surrogacyMain {
-    height: 840px;
-  }
-  .blueVectorDiv {
-    height: 150px;
-  }
-  .surrogacyMain {
-    font-size: 126px;
-  }
-}
-@media all and (max-width: 1201px) {
-  .surrogacyMain {
-    height: 830px;
-  }
-  .blueVectorDiv {
-    height: 140px;
-  }
-  .surrogacyMain {
-    font-size: 125px;
-  }
-}
-@media all and (max-width: 1101px) {
-  .surrogacyMain {
-    height: 810px;
-  }
-  .blueVectorDiv {
-    height: 120px;
-  }
-  .surrogacyMain {
-    font-size: 122px;
-  }
-}
-@media all and (max-width: 1001px) {
-  .surrogacyMain {
-    height: 750px;
-  }
-  .blueVectorDiv {
-    height: 100px;
-  }
-  .surrogacyMain {
-    font-size: 115px;
-  }
-}
-@media all and (max-width: 901px) {
-  .surrogacyMain {
-    height: 700px;
-  }
-  .blueVectorDiv {
-    height: 80px;
-  }
-  .surrogacyMain {
+    height: 100vh;
     font-size: 110px;
   }
+  .blueVectorDiv {
+    height: 20vh;
+  }
 }
-@media all and (max-width: 801px) {
+@media all and (max-width: 1000px) {
   .surrogacyMain {
-    height: 600px;
+    height: 95vh;
+    font-size: 100px;
+    padding-bottom: 0;
   }
   .blueVectorDiv {
-    height: 60px;
+    display: none;
   }
+}
+@media all and (max-width: 800px) {
   .surrogacyMain {
+    height: 90vh;
     font-size: 90px;
   }
 }
-@media all and (max-width: 701px) {
+@media all and (max-width: 600px) {
   .surrogacyMain {
-    height: 500px;
-    padding-bottom: 60px;
-  }
-  .blueVectorDiv {
-    height: 50px;
-  }
-  .surrogacyMain {
-    font-size: 70px;
+    height: 70vh;
+    font-size: 65px;
   }
 }
-@media all and (max-width: 601px) {
+@media all and (max-width: 500px) {
   .surrogacyMain {
-    height: 400px;
-    padding-bottom: 60px;
-  }
-  .blueVectorDiv {
-    height: 40px;
-  }
-  .surrogacyMain {
-    font-size: 60px;
-  }
-}
-@media all and (max-width: 501px) {
-  .surrogacyMain {
-    height: 380px;
-    padding-bottom: 30px;
-  }
-  .blueVectorDiv {
-    height: 35px;
-  }
-  .surrogacyMain {
+    height: 55vh;
     font-size: 50px;
   }
 }
-@media all and (max-width: 401px) {
+@media all and (max-width: 400px) {
   .surrogacyMain {
-    height: 330px;
-    padding-bottom: 30px;
-  }
-  .blueVectorDiv {
-    height: 35px;
-  }
-  .surrogacyMain {
+    height: 50vh;
     font-size: 40px;
-  }
-}
-@media all and (max-width: 331px) {
-  .surrogacyMain {
-    height: 280px;
-    padding-bottom: 30px;
-  }
-  .blueVectorDiv {
-    height: 30px;
-  }
-  .surrogacyMain {
-    font-size: 30px;
   }
 }

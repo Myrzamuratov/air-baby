@@ -1,0 +1,124 @@
+.header_main {
+  background-image: url("../../../images/Background.png");
+  background-size: cover;
+  background-position: center;
+}
+.header_main_black {
+  background: #191616;
+  background: -moz-linear-gradient(left, #191616 0%, #3f3636 100%);
+  background: -webkit-linear-gradient(left, #191616 0%, #3f3636 100%);
+  background: linear-gradient(to right, #191616 0%, #3f3636 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#191616', endColorstr='#3f3636',GradientType=1 );
+  height: 100%;
+  opacity: 0.7;
+  padding: 50px 0;
+  padding-left: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  color: white;
+}
+.header_data {
+  display: flex;
+  justify-content: space-between;
+  width: 35%;
+  align-items: center;
+  font-size: 16px;
+  font-family: Work Sans;
+  font-weight: 400;
+}
+.header_main_black h2 {
+  font-size: 48px;
+}
+.byAuthor_new {
+  display: flex;
+  align-items: center;
+}
+.data_new {
+  display: flex;
+  align-items: center;
+}
+@media all and (max-width: 1400px) {
+  .header_data {
+    width: 40%;
+  }
+  .header_main_black h2 {
+    font-size: 46px;
+  }
+}
+@media all and (max-width: 1200px) {
+  .header_data {
+    width: 45%;
+  }
+  .header_main_black h2 {
+    font-size: 45px;
+  }
+  .header_main_black {
+    padding: 45px 0;
+    padding-left: 100px;
+  }
+}
+@media all and (max-width: 1100px) {
+  .header_data {
+    width: 48%;
+    font-size: 15px;
+  }
+  .header_main_black h2 {
+    font-size: 40px;
+  }
+  .header_main_black {
+    padding: 45px 0;
+    padding-left: 100px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .header_main_black {
+    justify-content: center;
+    text-align: center;
+    padding: 40px 50px;
+  }
+  .header_data {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+@media all and (max-width: 800px) {
+  .header_main_black {
+    padding: 35px 40px;
+  }
+  .header_main_black h2 {
+    font-size: 38px;
+  }
+}
+@media all and (max-width: 700px) {
+  .header_main_black {
+    padding: 35px 30px;
+  }
+  .header_main_black h2 {
+    font-size: 32px;
+  }
+}
+@media all and (max-width: 600px) {
+  .header_main_black {
+    padding: 30px 20px;
+  }
+  .header_main_black h2 {
+    font-size: 32px;
+  }
+}
+@media all and (max-width: 500px) {
+  .header_data {
+    flex-wrap: wrap-reverse;
+  }
+  .header_main_black h2 {
+    font-size: 30px;
+  }
+}
+@media all and (max-width: 400px) {
+  .header_data {
+    flex-wrap: wrap-reverse;
+  }
+  .header_main_black h2 {
+    font-size: 25px;
+  }
+}

@@ -5,6 +5,7 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { useForm } from "../../context/FormContextProvider";
 import Slider from "@mui/material/Slider";
+import { useLang } from "../../context/LangContextProvider";
 
 const SurrogacyForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -68,7 +69,9 @@ const SurrogacyForm = () => {
     updatedChildrenArray[index][property] = value;
     setChildren(updatedChildrenArray);
   };
-
+  const [facePhotoPreview, setFacePhotoPreview] = useState(null);
+  const [passportPhotoPreview, setPassportPhotoPreview] = useState(null);
+  const [fullBodyPhotoPreview, setFullBodyPhotoPreview] = useState(null);
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     const inputName = e.target.name;
@@ -76,15 +79,43 @@ const SurrogacyForm = () => {
     switch (inputName) {
       case "facePhoto":
         setFacePhoto(selectedFile);
+        if (selectedFile) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            setFacePhotoPreview(e.target.result);
+          };
+          reader.readAsDataURL(selectedFile);
+        } else {
+          setFacePhotoPreview(null);
+        }
         break;
+
       case "fullbodySelfie":
         setFullbodySelfie(selectedFile);
+        if (selectedFile) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            setFullBodyPhotoPreview(e.target.result);
+          };
+          reader.readAsDataURL(selectedFile);
+        } else {
+          setFullBodyPhotoPreview(null);
+        }
         break;
+
       case "passportPhoto":
         setPassportPhoto(selectedFile);
+        if (selectedFile) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            setPassportPhoto(e.target.result);
+          };
+          reader.readAsDataURL(selectedFile);
+        } else {
+          setPassportPhoto(null);
+        }
         break;
       default:
-        // Действие по умолчанию, если имя инпута не соответствует ни одному из случаев
         break;
     }
   };
@@ -209,29 +240,30 @@ const SurrogacyForm = () => {
     validateWhenBreastFeed(value);
   };
 
+  const { lang, translationsEgg } = useLang();
   return (
     <div className="surrogacyMainDiv">
       <div className="surrogacyForm">
-        <h3 className="surrogacyFormHeader">Mother form</h3>
+        <h3 className="surrogacyFormHeader">{translationsEgg.motherForm}</h3>
         <div className="surrogacyFormBordy">
           <div className="inputDiv">
-            <label>First name</label>
+            <label>{translationsEgg.firstName}</label>
             <input
               onChange={(e) => setFirstName(e.target.value)}
               type="text"
-              placeholder="First name"
+              placeholder={translationsEgg.firstName}
             />
           </div>
           <div className="inputDiv">
-            <label>Last name </label>
+            <label>{translationsEgg.lastName}</label>
             <input
               type="text"
               onChange={(e) => setLastName(e.target.value)}
-              placeholder="Last name"
+              placeholder={translationsEgg.lastName}
             />
           </div>
           <div className="inputDiv">
-            <label>Date of birth</label>
+            <label>{translationsEgg.dateOfBirth}</label>
             <input
               type="date"
               value={birthDate}
@@ -240,7 +272,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Nationality</label>
+            <label>{translationsEgg.nationality}</label>
             <input
               type="text"
               onChange={(e) => setNationality(e.target.value)}
@@ -248,7 +280,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>Family status</label>
+            <label>{translationsEgg.maritalStatus}</label>
             <input
               type="text"
               onChange={(e) => setFamilyStatus(e.target.value)}
@@ -256,7 +288,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>Adress</label>
+            <label>{translationsEgg.address}</label>
             <input
               type="text"
               onChange={(e) => setAdress(e.target.value)}
@@ -264,7 +296,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Education</label>
+            <label>{translationsEgg.education}</label>
             <input
               type="text"
               onChange={(e) => setEducation(e.target.value)}
@@ -272,7 +304,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Current job</label>
+            <label>{translationsEgg.currentJob}</label>
             <input
               type="text"
               onChange={(e) => setJob(e.target.value)}
@@ -280,7 +312,9 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Height {height} sm</label>
+            <label>
+              {translationsEgg.height} {height} sm
+            </label>
             <Slider
               style={{ color: "#0079A1" }}
               value={height}
@@ -293,7 +327,9 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Weight {weight} kg</label>
+            <label>
+              {translationsEgg.weight} {weight} kg
+            </label>
             <Slider
               style={{ color: "#0079A1" }}
               value={weight}
@@ -306,17 +342,18 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>How is your Pregnancy going?</label>
+            <label>{translationsEgg.howPregnancy}</label>
             <input
               type="text"
               onChange={(e) => setHowsPregnancy(e.target.value)}
               placeholder="Type"
             />
           </div>
-          <div className="inputDiv" id="aloneInput">
-            <label>What is your working blood pressure?</label>
+          <div className="inputDiv">
+            <label>{translationsEgg.bloodPresure}</label>
             <input
               type="text"
+              id="aloneInput"
               onChange={(e) => setArterialPressure(e.target.value)}
               placeholder="Type"
             />
@@ -324,10 +361,10 @@ const SurrogacyForm = () => {
         </div>
       </div>
       <div className="surrogacyForm">
-        <h3 className="surrogacyFormHeader">Children</h3>
+        <h3 className="surrogacyFormHeader">{translationsEgg.children}</h3>
         <div className="surrogacyFormBordy">
           <div className="inputDiv" id="bigInput">
-            <label>How many?</label>
+            <label>{translationsEgg.howMany}</label>
             <input
               type="number"
               onChange={(e) => createChildrenArray(e.target.value)}
@@ -337,7 +374,7 @@ const SurrogacyForm = () => {
           {children.map((child, index) => (
             <div className="children" key={index} id={Date.now()}>
               <div className="inputDiv">
-                <label>Name</label>
+                <label>{translationsEgg.name}</label>
                 <input
                   type="text"
                   value={child.child_name}
@@ -348,7 +385,7 @@ const SurrogacyForm = () => {
                 />
               </div>
               <div className="inputDiv">
-                <label>Date of birth</label>
+                <label>{translationsEgg.dateOfBirth}</label>
                 <input
                   type="text"
                   value={child.date_of_birth}
@@ -358,7 +395,7 @@ const SurrogacyForm = () => {
                 />
               </div>
               <div className="inputDiv">
-                <label>At what stage did you give birth?</label>
+                <label>{translationsEgg.whatStage}</label>
                 <input
                   type="text"
                   value={child.what_stage_was_birth}
@@ -375,18 +412,18 @@ const SurrogacyForm = () => {
             </div>
           ))}
           <div className="inputDiv">
-            <label>Have you breastfed?</label>
+            <label>{translationsEgg.breastfed}</label>
             <select
               value={breastfeeding}
               onChange={(e) => setBreastfeeding(e.target.value)}
             >
               <option value="">Type</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="yes">{translationsEgg.yes}</option>
+              <option value="no">{translationsEgg.no}</option>
             </select>
           </div>
           <div className="inputDiv">
-            <label>When did you breastfeed?</label>
+            <label>{translationsEgg.whenBreastfed}</label>
             <input
               type="date"
               value={whenBreastFeed}
@@ -395,31 +432,32 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Have you used hormonal contraceptives?</label>
+            <label>{translationsEgg.hormonalContraceptives}</label>
             <select
               value={hormonControll}
               onChange={(e) => setHormonControll(e.target.value)}
             >
               <option value="">Type</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="yes">{translationsEgg.yes}</option>
+              <option value="no">{translationsEgg.no}</option>
             </select>
           </div>
           <div className="inputDiv">
-            <label>Blood type, Rh factor</label>
+            <label>{translationsEgg.bloodType}</label>
             <select
               value={bloodType}
               onChange={(e) => setBloodType(e.target.value)}
             >
               <option value="">Type</option>
-              <option value="o_RhD_positive">O(I)</option>
-              <option value="a_RhD_positive">A(II)</option>
-              <option value="b_RhD_positive">B(III)</option>
-              <option value="ab_RhD_positive">AB(IV)</option>
+              {translationsEgg.bloodTypeValues.map((item) => (
+                <option key={item.name} value={item.value}>
+                  {item.name}
+                </option>
+              ))}
             </select>
           </div>
           <div className="inputDiv">
-            <label>Menstrual cycle, how often?</label>
+            <label>{translationsEgg.howOftenMenstrualCycle}</label>
             <input
               type="text"
               onChange={(e) => setMenstrualCycle(e.target.value)}
@@ -427,7 +465,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv">
-            <label>Date of the beginning of the last menstruation?</label>
+            <label>{translationsEgg.dateLastMenstrualCycle}</label>
             <input
               type="text"
               onChange={(e) => setLastMenstrualCycle(e.target.value)}
@@ -435,7 +473,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>Previous gynecological diseases?</label>
+            <label>{translationsEgg.gynecologyDiseases}</label>
             <input
               type="text"
               id="aloneInput"
@@ -444,7 +482,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>Were there any sexually transmitted diseases?</label>
+            <label>{translationsEgg.sexyalydiseases}</label>
             <input
               type="text"
               onChange={(e) => setSexuallyTransmittedDiseases(e.target.value)}
@@ -452,20 +490,20 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>Have you had any miscarriages, abortions?</label>
+            <label>{translationsEgg.abortionHave}</label>
             <select
               value={miscarriagesAbortions}
               onChange={(e) => setMiscarriagesAbortions(e.target.value)}
             >
               <option value="">Type</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="yes">{translationsEgg.yes}</option>
+              <option value="no">{translationsEgg.no}</option>
             </select>
           </div>
           {miscarriagesAbortions === "yes" ? (
             <>
               <div className="inputDiv">
-                <label>Abortion term</label>
+                <label>{translationsEgg.abortionTerms}</label>
                 <input
                   type="text"
                   onChange={(e) => setAbTerm(e.target.value)}
@@ -473,15 +511,20 @@ const SurrogacyForm = () => {
                 />
               </div>
               <div className="inputDiv">
-                <label>Abortion quanity</label>
-                <input
-                  type="number"
+                <label>{translationsEgg.abortionQuanity}</label>
+                <Slider
+                  style={{ color: "#0079A1" }}
+                  value={abQuanity}
                   onChange={(e) => setAbQuanity(e.target.value)}
-                  placeholder="Type"
+                  valueLabelDisplay="auto"
+                  min={0}
+                  max={10}
+                  step={1}
+                  valueLabelFormat={(value) => `${value}`}
                 />
               </div>
               <div className="inputDiv" id="bigInput">
-                <label>Year of last abortion</label>
+                <label>{translationsEgg.lastAbortion}</label>
                 <input
                   id="aloneInput"
                   type="text"
@@ -492,18 +535,20 @@ const SurrogacyForm = () => {
             </>
           ) : null}
           <div className="inputDiv" id="bigInput">
-            <label>Experience of participation in surrogacy programs?</label>
+            <label>{translationsEgg.surrogacyExperience}</label>
             <select
               value={surrogacyExperience}
               onChange={(e) => setSurrogacyExperience(e.target.value)}
             >
               <option value="">Type</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="yes">{translationsEgg.yes}</option>
+              <option value="no">{translationsEgg.no}</option>
             </select>
           </div>
           <div className="inputDiv">
-            <label style={{ textAlign: "center" }}>Do you smoke?</label>
+            <label style={{ textAlign: "center" }}>
+              {translationsEgg.doYouSmoke}
+            </label>
             <FormControlLabel
               style={{ display: "flex", justifyContent: "center" }}
               control={
@@ -514,7 +559,7 @@ const SurrogacyForm = () => {
                   name="yes"
                 />
               }
-              label="Yes"
+              label={translationsEgg.yes}
             />
             <FormControlLabel
               style={{ display: "flex", justifyContent: "center" }}
@@ -526,11 +571,13 @@ const SurrogacyForm = () => {
                   name="no"
                 />
               }
-              label="No"
+              label={translationsEgg.no}
             />
           </div>
           <div className="inputDiv">
-            <label style={{ textAlign: "center" }}>Do you drink alcohol?</label>
+            <label style={{ textAlign: "center" }}>
+              {translationsEgg.doYouDrink}
+            </label>
             <FormControlLabel
               style={{ display: "flex", justifyContent: "center" }}
               control={
@@ -541,7 +588,7 @@ const SurrogacyForm = () => {
                   name="yes"
                 />
               }
-              label="Yes"
+              label={translationsEgg.yes}
             />
             <FormControlLabel
               style={{ display: "flex", justifyContent: "center" }}
@@ -553,13 +600,11 @@ const SurrogacyForm = () => {
                   name="no"
                 />
               }
-              label="No"
+              label={translationsEgg.no}
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>
-              Do you have any chronic diseases? If so, what are they?
-            </label>
+            <label>{translationsEgg.chronicDiseases}</label>
             <input
               type="text"
               onChange={(e) => setChronicDiseases(e.target.value)}
@@ -567,7 +612,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>Have you had any surgeries? Which ones and when?</label>
+            <label>{translationsEgg.haveSurgeries}</label>
             <input
               type="text"
               onChange={(e) => setOperation(e.target.value)}
@@ -575,7 +620,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>Family history: (presence of diseases in relatives)?</label>
+            <label>{translationsEgg.famHistory}</label>
             <input
               type="text"
               onChange={(e) => setFamilyMedHistory(e.target.value)}
@@ -583,19 +628,19 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>Do relatives have multiple pregnancies?</label>
+            <label>{translationsEgg.multiplyPregnancy}</label>
             <select
               value={multiplePregnInFamily}
               onChange={(e) => setMultiplePregnInFamily(e.target.value)}
             >
               <option value="">Type</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="yes">{translationsEgg.yes}</option>
+              <option value="no">{translationsEgg.no}</option>
             </select>
           </div>
 
           <div className="inputDiv" id="bigInput">
-            <label>Why do you want to become a surrogate mother?</label>
+            <label>{translationsEgg.whySurrogacy}</label>
             <input
               type="text"
               onChange={(e) => setReasonSurrogacy(e.target.value)}
@@ -603,7 +648,7 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>Where did you find out about the surrogacy program?</label>
+            <label>{translationsEgg.whereYouKnow}</label>
             <input
               type="text"
               onChange={(e) => setHowLearned(e.target.value)}
@@ -611,82 +656,114 @@ const SurrogacyForm = () => {
             />
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>
-              Does your husband and other family members agree to participate in
-              the program?
-            </label>
+            <label>{translationsEgg.familyApproval}</label>
             <select
               value={familyApproval}
               onChange={(e) => setFamilyApproval(e.target.value)}
             >
               <option value="">Type</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="yes">{translationsEgg.yes}</option>
+              <option value="no">{translationsEgg.no}</option>
             </select>
           </div>
           <div className="inputDiv" id="bigInput">
-            <label>
-              Have you been subject to disciplinary, administrative or criminal
-              liability?
-            </label>
+            <label>{translationsEgg.criminal}</label>
             <select
               value={legalIssues}
               onChange={(e) => setLegalIssues(e.target.value)}
             >
               <option value="">Type</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="yes">{translationsEgg.yes}</option>
+              <option value="no">{translationsEgg.no}</option>
             </select>
           </div>
-          <div className="inputDiv">
-            <label>Photo of an international passport?</label>
-            <input
-              type="file"
-              onChange={handleFileChange}
-              name="passportPhoto"
-              placeholder="Type"
-            />
+          <div className="inputDiv"></div>
+
+          <div className="image_input_div" id="bigInput">
+            <label>{translationsEgg.passportPhoto}</label>
+            <div className="image_input">
+              <input
+                type="file"
+                onChange={handleFileChange}
+                name="passportPhoto"
+                placeholder="Type"
+              />
+              {passportPhotoPreview ? (
+                <div className="image_div">
+                  <img
+                    src={passportPhotoPreview}
+                    alt="Passport photo Preview"
+                  />
+                </div>
+              ) : (
+                <div className="image_div">{translationsEgg.photo}</div>
+              )}
+            </div>
           </div>
-          <div className="inputDiv">
-            <label>Phone number,(Whatsapp)</label>
+
+          <div className="inputDiv" id="bigInput">
+            <label>{translationsEgg.phoneNumberWhatsApp}</label>
             <input
               type="text"
               onChange={(e) => setPhoneNumber(e.target.value)}
               placeholder="Type"
             />
           </div>
-          <div className="inputDiv">
-            <label>Photo of the face</label>
-            <input
-              type="file"
-              onChange={handleFileChange}
-              name="facePhoto"
-              placeholder="Type"
-            />
+          <div className="image_input_div" id="bigInput">
+            <label>{translationsEgg.facePhoto}</label>
+            <div className="image_input">
+              <input
+                type="file"
+                onChange={handleFileChange}
+                name="facePhoto"
+                placeholder="Type"
+              />
+              {facePhotoPreview ? (
+                <div className="image_div">
+                  <img src={facePhotoPreview} alt="Face photo Preview" />
+                </div>
+              ) : (
+                <div className="image_div">{translationsEgg.photo}</div>
+              )}
+            </div>
           </div>
           <div className="inputDiv">
-            <label>Manager name</label>
+            <label>{translationsEgg.managerName}</label>
             <input
               type="text"
               onChange={(e) => setManagerName(e.target.value)}
               placeholder="Type"
             />
           </div>
-          <div className="inputDiv">
-            <label>Photo of the full body</label>
-            <input
-              type="file"
-              onChange={handleFileChange}
-              name="fullbodySelfie"
-              placeholder="Type"
-            />
+
+          <div className="image_input_div" id="bigInput">
+            <label>{translationsEgg.fullBodyPhoto}</label>
+            <div className="image_input">
+              <input
+                type="file"
+                onChange={handleFileChange}
+                name="fullbodySelfie"
+                placeholder="Type"
+              />
+              {fullBodyPhotoPreview ? (
+                <div className="image_div">
+                  <img src={fullBodyPhotoPreview} alt="Full photo Preview" />
+                </div>
+              ) : (
+                <div className="image_div">{translationsEgg.photo}</div>
+              )}
+            </div>
           </div>
+
+          <div className="inputDiv"></div>
         </div>
         <div>
           <button className="surrogacy_button" onClick={handleSave}>
-            Submit
+            {translationsEgg.submitButton}
           </button>
-          <button className="surrogacy_button">Save</button>
+          <button className="surrogacy_button">
+            {translationsEgg.saveButton}
+          </button>
         </div>
       </div>
     </div>

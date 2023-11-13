@@ -9,6 +9,9 @@ import RegisterPage from "../pages/RegisterPage";
 import ProfilePage from "../pages/ProfilePage";
 import EggDonationPage from "../pages/EggDonationPage";
 import SurrogacyPage from "../pages/SurrogacyPage";
+import NewsPage from "../pages/NewsPage";
+import OneProductPage from "../pages/OneProductPage";
+import ContactUsPage from "../pages/ContactUsPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -19,8 +22,11 @@ const MainRoutes = () => {
     { link: "/profile", element: <ProfilePage />, id: 5 },
     { link: "/eggdonation", element: <EggDonationPage />, id: 6 },
     { link: "/surrogacy", element: <SurrogacyPage />, id: 7 },
+    { link: "/news", element: <NewsPage />, id: 8 },
+    { link: "/oneProduct/:id", element: <OneProductPage />, id: 9 },
+    { link: "/contactus", element: <ContactUsPage />, id: 10 },
   ];
-  const PRIVATE_ROUTES = [{ link: "/admin", element: <AdminPage />, id: 10 }];
+  const PRIVATE_ROUTES = [{ link: "/admin", element: <AdminPage />, id: 11 }];
   const user = true;
   return (
     <Routes>

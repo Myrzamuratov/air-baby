@@ -101,14 +101,20 @@ const Login = () => {
               placeholder="Enter password"
             />
 
-            <Button disabled={!formValid} onClick={handleSave}>
-              Sing in
+            <Button
+              className="button"
+              disabled={!formValid}
+              onClick={handleSave}
+            >
+              Sign in
             </Button>
           </form>
           {loading ? <CircularProgress /> : null}
           <h4>Don't have an account?</h4>
           <NavLink
             to={"/register"}
+            className="sing_nav"
+            ba
             style={{
               textDecoration: "underline",
               color: "blue",

@@ -95,8 +95,7 @@ const Register = () => {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("password2", password2);
-    handleRegister(formData);
-    handleLogin(form, email);
+    handleRegister(formData, email);
   }
   return (
     <div className="mainBackground">
@@ -156,6 +155,7 @@ const Register = () => {
           {loading ? <CircularProgress /> : null}
           <h4>Already have an account or our card?</h4>
           <NavLink
+            className="sing_nav"
             to={"/login"}
             style={{ textDecoration: "underline", color: "blue" }}
           >

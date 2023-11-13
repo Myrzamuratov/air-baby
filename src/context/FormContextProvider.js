@@ -2,8 +2,8 @@ import axios from "axios";
 import { API, getTokens } from "../helpers/const";
 import React, { createContext, useContext } from "react";
 
-export const formContext = createContext();
-export const useForm = () => useContext(formContext);
+export const FormContext = createContext();
+export const useForm = () => useContext(FormContext);
 const FormContextProvider = ({ children }) => {
   async function createSurrogacyApplication(formData) {
     try {
@@ -26,7 +26,7 @@ const FormContextProvider = ({ children }) => {
     }
   }
   const values = { createSurrogacyApplication, createDonnorApplication };
-  return <formContext.Provider value={values}>{children}</formContext.Provider>;
+  return <FormContext.Provider value={values}>{children}</FormContext.Provider>;
 };
 
 export default FormContextProvider;

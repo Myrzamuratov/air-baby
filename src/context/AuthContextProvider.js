@@ -23,10 +23,11 @@ const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const [currentUser, setCurrentUser] = useState("");
 
-  async function handleRegister(formData) {
+  async function handleRegister(formData, email) {
     setLoading(true);
     try {
       await axios.post(`${API}account/register/`, formData);
+      handleLogin(formData, email);
     } catch (error) {
       console.log(error);
     } finally {
@@ -52,7 +53,7 @@ const AuthContextProvider = ({ children }) => {
 
   async function getUser() {
     try {
-      const res = await axios(`${API}/accounts/`);
+      const res = await axios(`${API}account/`);
       res.data.map((user) => {
         if (user.email === currentUser) {
           dispatch({ type: "GET_USER", payload: user });

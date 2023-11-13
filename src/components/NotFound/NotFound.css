@@ -1,0 +1,31 @@
+.not_found {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #0079a1;
+}
+.not_found h2 {
+  font-size: 50px;
+  margin-bottom: 25px;
+}
+.not_found button {
+  font-size: 25px;
+  padding: 20px;
+  background-color: #0079a1;
+  border-radius: 10px;
+}
+.not_found button:hover {
+  background-color: rgb(3, 63, 82);
+  color: white;
+}
+@media all and (max-width: 600px) {
+  .not_found h2 {
+    font-size: 35px;
+  }
+  .not_found button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}

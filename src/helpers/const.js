@@ -1,4 +1,4 @@
-export const API = "http://51.20.118.6/";
+export const API = "http://34.123.161.155/";
 
 export const ADMIN = "admin@admin.com";
 

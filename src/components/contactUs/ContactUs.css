@@ -1,0 +1,119 @@
+.contact_main {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: auto;
+  font-family: Work Sans;
+  flex-wrap: wrap;
+}
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+}
+.contact_form_header {
+  margin-bottom: 15px;
+  padding-left: 10px;
+  width: 80%;
+}
+.contact_form_header h4 {
+  color: #159eec;
+  font-size: 18px;
+  font-family: Work Sans;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.contact_form_header h3 {
+  color: #0079a1;
+  font-size: 32px;
+  font-family: Tilda Sans VF;
+  font-weight: 700;
+}
+.contact_form_input {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  background-color: #0079a1;
+  border-radius: 15px;
+}
+.contact_form_input input {
+  font-size: 16px;
+  width: 50%;
+  padding: 15px 10px;
+  border: 1px solid white;
+  color: white;
+}
+
+.contact_form_input input::placeholder {
+  color: white;
+}
+.contact_form_input textarea::placeholder {
+  color: white;
+}
+.contact_form_input textarea {
+  font-size: 16px;
+  width: 100%;
+  height: 200px;
+  padding: 15px 10px;
+  border: 1px solid white;
+  border-top: none;
+  color: white;
+  border-bottom: none;
+  color: white;
+}
+.contact_form_input button {
+  width: 100%;
+  font-size: 16px;
+  color: #0079a1;
+  border: 1px solid white;
+  border-top: none;
+  border-bottom: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 15px;
+  background-color: #d1edff;
+}
+#inputBig {
+  width: 100%;
+  border-top: none;
+}
+.contact_info {
+  width: 50%;
+  display: flex;
+}
+.contact_info_ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.contact_info_ul li {
+  width: 48%;
+  color: #0079a1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #d1edff;
+  padding: 30px 25px;
+  margin: 20px 0;
+  margin-bottom: 0;
+  border-radius: 5px;
+}
+.svg {
+  stroke: #0079a1;
+}
+.contact_info_ul li span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contact_info_ul li:hover {
+  cursor: pointer;
+  background-color: #0079a1;
+  color: white;
+  .svg {
+    stroke: white;
+  }
+}
