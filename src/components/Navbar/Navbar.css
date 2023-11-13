@@ -136,4 +136,7 @@
   .navbar_main_container {
     padding: 0 30px;
   }
+  .navbar_logo_container {
+    margin-bottom: 5px;
+  }
 }
