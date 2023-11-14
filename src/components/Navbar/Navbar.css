@@ -103,13 +103,13 @@
 }
 @media all and (max-width: 1000px) {
   .navbar_logo_container {
-    width: 24vh;
+    width: 240px;
     margin-bottom: 15px;
   }
 }
 @media all and (max-width: 900px) {
   .navbar_logo_container {
-    width: 25vh;
+    width: 270px;
   }
 }
 @media all and (max-width: 800px) {

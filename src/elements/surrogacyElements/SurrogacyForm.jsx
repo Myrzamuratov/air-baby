@@ -108,11 +108,11 @@ const SurrogacyForm = () => {
         if (selectedFile) {
           const reader = new FileReader();
           reader.onload = (e) => {
-            setPassportPhoto(e.target.result);
+            setPassportPhotoPreview(e.target.result);
           };
           reader.readAsDataURL(selectedFile);
         } else {
-          setPassportPhoto(null);
+          setPassportPhotoPreview(null);
         }
         break;
       default:
@@ -130,8 +130,6 @@ const SurrogacyForm = () => {
       !adress.trim() ||
       !education.trim() ||
       !job.trim() ||
-      !height.trim() ||
-      !weight.trim() ||
       !howsPregnancy.trim() ||
       !arterialPressure.trim() ||
       !breastfeeding.trim() ||
@@ -467,7 +465,7 @@ const SurrogacyForm = () => {
           <div className="inputDiv">
             <label>{translationsEgg.dateLastMenstrualCycle}</label>
             <input
-              type="text"
+              type="date"
               onChange={(e) => setLastMenstrualCycle(e.target.value)}
               placeholder="Type"
             />
