@@ -1,4 +1,4 @@
-export const API = "https://api.myairbaby.net/";
+export const API = "https://myairbaby.net/";
 
 export const ADMIN = "admin@admin.com";
 
