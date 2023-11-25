@@ -1,0 +1,49 @@
+.profile_menu_main {
+  background-color: #0079a1;
+  height: 90vh;
+  width: 20%;
+  padding: 50px 0 0 15px;
+}
+
+.profile_menu_element {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 25px 0;
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+}
+.profile_menu_element h3 {
+  color: white;
+  font-size: 20px;
+  margin-left: 15px;
+}
+.profile_menu_icon {
+  fill: white;
+  stroke: white;
+}
+
+.profile_menu_element:hover {
+  background-color: white;
+}
+
+.profile_menu_element.active {
+  background-color: white;
+  color: black;
+}
+
+.profile_menu_element:hover .profile_menu_icon {
+  fill: #0079a1;
+  stroke: #0079a1;
+}
+.profile_menu_element:hover h3 {
+  color: black;
+}
+.profile_menu_element.active .profile_menu_icon {
+  fill: #0079a1;
+  stroke: #0079a1;
+}
+.profile_menu_element.active h3 {
+  color: black;
+}

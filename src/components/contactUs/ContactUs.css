@@ -1,10 +1,13 @@
 .contact_main {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 70%;
+  height: 80vh;
   margin: auto;
   font-family: Work Sans;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 .contact_form {
   display: flex;
@@ -87,6 +90,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  height: 450px;
 }
 .contact_info_ul li {
   width: 48%;
@@ -115,5 +119,83 @@
   color: white;
   .svg {
     stroke: white;
+  }
+}
+
+@media all and (max-width: 1500px) {
+  .contact_main {
+    height: 100vh;
+  }
+}
+@media all and (max-width: 1300px) {
+  .contact_main {
+    width: 80%;
+  }
+}
+@media all and (max-width: 1200px) {
+  .contact_form_header h3 {
+    font-size: 25px;
+  }
+  .contact_info_ul li {
+    justify-content: space-around;
+  }
+}
+@media all and (max-width: 1100px) {
+  .contact_main {
+    width: 90%;
+  }
+  .contact_form_header h3 {
+    font-size: 20px;
+  }
+  .contact_info_ul li span {
+    font-size: 15px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .contact_main {
+    height: 100%;
+  }
+  .contact_form {
+    width: 80%;
+    margin-top: 50px;
+  }
+  .contact_info {
+    width: 80%;
+  }
+  .contact_info_ul {
+    justify-content: space-around;
+  }
+}
+@media all and (max-width: 900px) {
+  .contact_main {
+    width: 100%;
+  }
+}
+@media all and (max-width: 600px) {
+  .contact_form {
+    width: 90%;
+    margin-top: 50px;
+  }
+  .contact_info {
+    width: 90%;
+  }
+}
+@media all and (max-width: 500px) {
+  .contact_info_ul li {
+    margin: 15px 0;
+    padding: 15px;
+  }
+  .contact_form_input textarea {
+    height: 150px;
+  }
+}
+@media all and (max-width: 400px) {
+  .contact_info_ul li {
+    margin: 5px 0;
+    padding: 5px;
+    justify-content: center;
+  }
+  .contact_info_ul {
+    height: 350px;
   }
 }

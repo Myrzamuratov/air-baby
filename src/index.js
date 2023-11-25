@@ -7,6 +7,8 @@ import AuthContextProvider from "./context/AuthContextProvider";
 import FormContextProvider from "./context/FormContextProvider";
 import LangContextProvider from "./context/LangContextProvider";
 import NewsContextProvider from "./context/NewsContextProvider";
+import ReviewContext from "./context/ReviewContextProvider";
+import ReviewContextProvider from "./context/ReviewContextProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
@@ -14,7 +16,9 @@ root.render(
       <AuthContextProvider>
         <FormContextProvider>
           <NewsContextProvider>
-            <App />
+            <ReviewContextProvider>
+              <App />
+            </ReviewContextProvider>
           </NewsContextProvider>
         </FormContextProvider>
       </AuthContextProvider>

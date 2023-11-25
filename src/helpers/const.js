@@ -1,4 +1,4 @@
-export const API = "http://34.123.161.155/";
+export const API = "https://api.myairbaby.net/";
 
 export const ADMIN = "admin@admin.com";
 

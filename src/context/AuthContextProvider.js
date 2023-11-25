@@ -1,7 +1,8 @@
 import React, { createContext, useContext, useReducer, useState } from "react";
 import axios from "axios";
-import { API } from "../helpers/const";
+import { API, getTokens } from "../helpers/const";
 import { useNavigate } from "react-router-dom";
+import Modal from "react-modal"; // Import the modal library
 
 export const authContext = createContext();
 export const useAuth = () => useContext(authContext);
@@ -16,12 +17,43 @@ const reducer = (state = INIT_STATE, action) => {
       return state;
   }
 };
+const modalStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    maxWidth: "400px", // Adjust the maximum width as needed
+    padding: "20px",
+    borderRadius: "8px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    textAlign: "center", // Center the content
+  },
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+};
 
 const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const [currentUser, setCurrentUser] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalError, setModalError] = useState("");
+  const [userData, setUserData] = useState();
+
+  const getErrorMessage = (error) => {
+    if (error.response && error.response.data && error.response.data.detail) {
+      return error.response.data;
+    } else if (error.message) {
+      return error.message;
+    } else {
+      return "An error occurred.";
+    }
+  };
 
   async function handleRegister(formData, email) {
     setLoading(true);
@@ -29,7 +61,9 @@ const AuthContextProvider = ({ children }) => {
       await axios.post(`${API}account/register/`, formData);
       handleLogin(formData, email);
     } catch (error) {
-      console.log(error);
+      const errorMessage = getErrorMessage(error);
+      setModalError(`Registration failed. ${errorMessage}`);
+      openModal();
     } finally {
       setLoading(false);
     }
@@ -39,13 +73,14 @@ const AuthContextProvider = ({ children }) => {
     setLoading(true);
     try {
       const res = await axios.post(`${API}account/login/`, formData);
-      console.log(res.data.access);
       localStorage.setItem("tokens", JSON.stringify(res.data));
       localStorage.setItem("email", email);
       setCurrentUser(email);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      const errorMessage = getErrorMessage(error);
+      setModalError(`Login failed. ${errorMessage}`);
+      openModal();
     } finally {
       setLoading(false);
     }
@@ -53,15 +88,19 @@ const AuthContextProvider = ({ children }) => {
 
   async function getUser() {
     try {
-      const res = await axios(`${API}account/`);
-      res.data.map((user) => {
-        if (user.email === currentUser) {
-          dispatch({ type: "GET_USER", payload: user });
-          console.log(state.users);
-        }
-      });
+      const res = await axios(`${API}account/`, getTokens());
+      const allUserData = res.data;
+
+      if (Array.isArray(allUserData) && allUserData.length > 0) {
+        const userDataObject = allUserData[0];
+        dispatch({ type: "GET_USER", payload: userDataObject });
+        setUserData(userDataObject);
+        console.log(userDataObject);
+      }
     } catch (error) {
-      console.log(error);
+      const errorMessage = getErrorMessage(error);
+      setModalError(`Failed to fetch user data. ${errorMessage}`);
+      openModal();
     }
   }
 
@@ -84,12 +123,19 @@ const AuthContextProvider = ({ children }) => {
       const email = localStorage.getItem("email");
       setCurrentUser(email);
     } catch (error) {
-      console.log(error);
       logout();
+      setModalError("Session expired. Please log in again.");
+      openModal(); // Show modal on error
     } finally {
       setLoading(false);
     }
   }
+
+  const openModal = () => setModalIsOpen(true); // Function to open the modal
+  const closeModal = () => {
+    setModalIsOpen(false); // Function to close the modal
+    setModalError(""); // Reset the error message when closing the modal
+  };
 
   const values = {
     loading,
@@ -101,8 +147,39 @@ const AuthContextProvider = ({ children }) => {
     currentUser,
     users: state.users,
     state,
+    modalIsOpen,
+    openModal,
+    closeModal,
+    modalError,
+    userData,
   };
-  return <authContext.Provider value={values}>{children}</authContext.Provider>;
+
+  return (
+    <authContext.Provider value={values}>
+      {children}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Error Modal"
+        style={modalStyles}
+      >
+        <h2>Error</h2>
+        <p>{modalError}</p>
+        <button
+          style={{
+            marginTop: "15px",
+            backgroundColor: "#0079A1",
+            padding: "10px",
+            borderRadius: "10px",
+            color: "white",
+          }}
+          onClick={closeModal}
+        >
+          Close
+        </button>
+      </Modal>
+    </authContext.Provider>
+  );
 };
 
 export default AuthContextProvider;

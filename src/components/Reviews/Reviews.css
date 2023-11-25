@@ -1,0 +1,150 @@
+.reviews_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.reviews_header {
+  color: black;
+  font-size: 48px;
+  font-weight: 600;
+}
+.reviews_list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.review_item {
+  position: relative;
+  width: 30%;
+  min-height: 200px;
+  border: 1px solid #e7eaec;
+  border-radius: 4px;
+  padding: 25px 25px 35px 25px;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
+}
+.delet_icon {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 5px;
+  color: #0079a1;
+}
+
+.delet_icon:hover {
+  color: red;
+}
+.review_item h4 {
+  color: #133240;
+  font-size: 22px;
+  margin-bottom: 15px;
+  word-break: break-all;
+}
+.review_item p {
+  color: #133240;
+  font-size: 16px;
+}
+.review_input {
+  width: 90%;
+  margin: 35px 0;
+  text-align: center;
+}
+.review_input h3 {
+  color: black;
+  font-size: 36px;
+  margin: 10px 0;
+}
+.review_input_input {
+  width: 100%;
+  padding: 15px 25px 15px 15px;
+}
+.review_input_button {
+  background-color: #0079a1;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+@media all and (max-width: 1500px) {
+  .review_item h4 {
+    font-size: 20px;
+  }
+}
+@media all and (max-width: 1300px) {
+  .reviews_list {
+    width: 85%;
+  }
+}
+@media all and (max-width: 1200px) {
+  .reviews_list {
+    width: 90%;
+  }
+}
+@media all and (max-width: 1100px) {
+  .review_item {
+    width: 36%;
+  }
+}
+@media all and (max-width: 1000px) {
+  .review_item {
+    width: 39%;
+  }
+  .reviews_header {
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 900px) {
+  .review_item {
+    width: 42%;
+  }
+  .review_item h4 {
+    font-size: 18px;
+  }
+
+  .review_item p {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 800px) {
+  .review_item {
+    width: 45%;
+    margin: 15px 0;
+  }
+}
+@media all and (max-width: 700px) {
+  .reviews_header {
+    font-size: 35px;
+  }
+
+  .review_item {
+    width: 47%;
+  }
+}
+@media all and (max-width: 600px) {
+  .review_item {
+    width: 90%;
+  }
+  .reviews_header {
+    font-size: 30px;
+  }
+}
+@media all and (max-width: 400px) {
+  .review_item {
+    width: 95%;
+  }
+  .reviews_header {
+    font-size: 25px;
+  }
+  .review_input h3 {
+    font-size: 25px;
+  }
+}

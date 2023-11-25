@@ -14,8 +14,9 @@ export default function BasicRating({ item, color, readOnly }) {
 
   function handleSave(newValue) {
     setValue(newValue);
-    const updatedItem = { ...item, rating: newValue };
-    addRating(updatedItem);
+    const formData = new FormData();
+    formData.append("rating", newValue);
+    addRating(formData, item.id);
   }
 
   return (

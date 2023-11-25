@@ -20,6 +20,7 @@ const Form = () => {
   const [currentJob, setCurrentJob] = useState("");
   const [martialStatus, setMartialStatus] = useState("");
   const [donationExp, setDonationExp] = useState("");
+  const [address, setAddress] = useState("");
   const [travel, setTravel] = useState("");
   const [bloodType, setBloodType] = useState("");
   const [height, setHeght] = useState(160);
@@ -82,6 +83,7 @@ const Form = () => {
     formData.append("country_of_residence", countryOfResidence);
     formData.append("education", education);
     formData.append("current_job", currentJob);
+    formData.append("address", address);
     formData.append("marital_status", martialStatus);
     formData.append("experience_of_donation", donationExp);
     formData.append("willingness_to_travel", travel);
@@ -267,6 +269,15 @@ const Form = () => {
               placeholder="Type"
               value={currentJob}
               onChange={(e) => setCurrentJob(e.target.value)}
+            />
+          </div>
+          <div className="inputDiv" id="bigInput">
+            <label>{translationsEgg.address}</label>
+            <input
+              type="text"
+              placeholder="Type"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
             />
           </div>
           <div className="inputDiv" id="checkboxDiv">

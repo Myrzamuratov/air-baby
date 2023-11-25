@@ -7,8 +7,10 @@ import { Button } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../context/AuthContextProvider";
 import { Password } from "@mui/icons-material";
+import { useLang } from "../../context/LangContextProvider";
 
 const Register = () => {
+  const { authElement } = useLang();
   const { handleRegister, handleLogin, loading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -101,8 +103,8 @@ const Register = () => {
     <div className="mainBackground">
       <div className="registerModalContainer">
         <div className="registerFormContainer">
-          <h2>Welcome!</h2>
-          <h3>Please sing up to continue.</h3>
+          <h2>{authElement.welcome}</h2>
+          <h3>{authElement.signUpToContinue}</h3>
           <form className="registerFormContainer_form">
             {emailDirty && emailError && (
               <div className="inputError">{emailError}</div>
@@ -113,7 +115,7 @@ const Register = () => {
               value={email}
               name="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder={authElement.email}
             />
 
             {passwordDirty && passwordError && (
@@ -125,7 +127,7 @@ const Register = () => {
               value={password}
               name="password"
               type="password"
-              placeholder="Enter password"
+              placeholder={authElement.password}
             />
             {password2Dirty && password2Error && (
               <div className="inputError">{password2Error}</div>
@@ -136,7 +138,7 @@ const Register = () => {
               value={password2}
               name="password2"
               type="password"
-              placeholder="Repeat password"
+              placeholder={authElement.rePassword}
             />
             <div className="checkbox">
               <input
@@ -145,21 +147,21 @@ const Register = () => {
                 onClick={() => setCheckbox(true)}
               />
               <label className={checkCheckbox ? null : "errCheckbox"}>
-                I agree with the privacy policy
+                {authElement.privacyPolicy}
               </label>
             </div>
             <Button disabled={!formValid} onClick={handleSave}>
-              Sing up
+              {authElement.signUp}
             </Button>
           </form>
           {loading ? <CircularProgress /> : null}
-          <h4>Already have an account or our card?</h4>
+          <h4>{authElement.haveAccount}</h4>
           <NavLink
             className="sing_nav"
             to={"/login"}
             style={{ textDecoration: "underline", color: "blue" }}
           >
-            Sing in
+            {authElement.signIn}
           </NavLink>
         </div>
       </div>

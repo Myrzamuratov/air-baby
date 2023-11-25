@@ -6,7 +6,9 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { Button } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../context/AuthContextProvider";
+import { useLang } from "../../context/LangContextProvider";
 const Login = () => {
+  const { authElement } = useLang();
   const { handleLogin, loading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -74,8 +76,8 @@ const Login = () => {
     <div className="mainBackground">
       <div className="registerModalContainer">
         <div className="registerFormContainer">
-          <h2>Welcome back!</h2>
-          <h3>Please sing in to continue.</h3>
+          <h2>{authElement.welcomeBack}</h2>
+          <h3>{authElement.signInToContinue}</h3>
           <form className="registerFormContainer_form">
             {emailDirty && emailError && (
               <div className="inputError">{emailError}</div>
@@ -86,7 +88,7 @@ const Login = () => {
               value={email}
               name="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder={authElement.email}
             />
 
             {passwordDirty && passwordError && (
@@ -98,7 +100,7 @@ const Login = () => {
               value={password}
               name="password"
               type="password"
-              placeholder="Enter password"
+              placeholder={authElement.password}
             />
 
             <Button
@@ -106,11 +108,11 @@ const Login = () => {
               disabled={!formValid}
               onClick={handleSave}
             >
-              Sign in
+              {authElement.signIn}
             </Button>
           </form>
           {loading ? <CircularProgress /> : null}
-          <h4>Don't have an account?</h4>
+          <h4>{authElement.dontHaveAccount}</h4>
           <NavLink
             to={"/register"}
             className="sing_nav"
@@ -121,7 +123,7 @@ const Login = () => {
               background: "none",
             }}
           >
-            Sing up
+            {authElement.signUp}
           </NavLink>
         </div>
       </div>

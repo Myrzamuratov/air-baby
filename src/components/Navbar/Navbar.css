@@ -97,19 +97,16 @@
     display: flex;
     align-items: center;
   }
-  .navbar_logo_container {
-    width: 14%;
-  }
 }
 @media all and (max-width: 1000px) {
   .navbar_logo_container {
-    width: 240px;
+    width: 150px;
     margin-bottom: 15px;
   }
 }
 @media all and (max-width: 900px) {
   .navbar_logo_container {
-    width: 270px;
+    width: 150px;
   }
 }
 @media all and (max-width: 800px) {
