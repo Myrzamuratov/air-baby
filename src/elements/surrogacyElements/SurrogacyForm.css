@@ -140,6 +140,10 @@
     padding: 20px;
     margin-top: 25px;
   }
+  .button_div {
+    display: flex;
+    justify-content: center;
+  }
 }
 @media all and (max-width: 500px) {
   .inputDiv input {
@@ -149,6 +153,9 @@
   .inputDiv select {
     padding: 12px;
     font-size: 10px;
+  }
+  .surrogacy_button {
+    font-size: 15px;
   }
 }
 @media all and (max-width: 400px) {

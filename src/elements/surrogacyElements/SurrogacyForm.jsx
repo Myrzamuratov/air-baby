@@ -755,12 +755,9 @@ const SurrogacyForm = () => {
 
           <div className="inputDiv"></div>
         </div>
-        <div>
+        <div className="button_div">
           <button className="surrogacy_button" onClick={handleSave}>
             {translationsEgg.submitButton}
-          </button>
-          <button className="surrogacy_button">
-            {translationsEgg.saveButton}
           </button>
         </div>
       </div>

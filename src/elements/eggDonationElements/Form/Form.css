@@ -60,10 +60,12 @@
   }
 }
 @media all and (max-width: 1200px) {
+  .image_input {
+    flex-direction: column;
+  }
   .image_input input {
     font-size: 10px;
-    height: 280px;
-    padding: 120px 0;
+    width: 100%;
   }
   .eggDonationMain {
     padding: 45px;
@@ -118,6 +120,10 @@
   }
 }
 @media all and (max-width: 500px) {
+  .surrogacy_button {
+    font-size: 15px;
+    padding: 5px;
+  }
 }
 @media all and (max-width: 400px) {
 }
