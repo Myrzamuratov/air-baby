@@ -25,11 +25,11 @@ const modalStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    maxWidth: "400px", // Adjust the maximum width as needed
+    maxWidth: "400px",
     padding: "20px",
     borderRadius: "8px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    textAlign: "center", // Center the content
+    textAlign: "center",
   },
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
