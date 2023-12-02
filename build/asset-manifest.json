@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e175730c.css",
+    "main.js": "/static/js/main.b1cdfc56.js",
+    "static/media/Background (1).png": "/static/media/Background (1).e50105a4080bd75be7ba.png",
+    "static/media/Background.png": "/static/media/Background.06a012c435ebd62d044c.png",
+    "static/media/asian-young-main-group-hospital-professional 1.png": "/static/media/asian-young-main-group-hospital-professional 1.d04a3e4d5422958bdd62.png",
+    "static/media/image 3 (1).png": "/static/media/image 3 (1).1b5cd8ec199fdb8b61b1.png",
+    "static/media/Group 8.svg": "/static/media/Group 8.00673f551bd3bb85e30544195a842984.svg",
+    "static/media/Group9.svg": "/static/media/Group9.b18e3f2e7de9c5fda5e38d2626fe147b.svg",
+    "static/media/Group 11.svg": "/static/media/Group 11.c77a0cb0c116129f5b5efe1df81992f9.svg",
+    "static/media/Group 10.svg": "/static/media/Group 10.16918419c58739d05ff8bf7bf16b9a5b.svg",
+    "static/media/Group 7.svg": "/static/media/Group 7.bb813c08a750c360237c0d5850301224.svg",
+    "static/media/Group 12.svg": "/static/media/Group 12.1a20f5c157a85251e7a34d68684d8185.svg",
+    "static/media/ContactPhone.svg": "/static/media/ContactPhone.eb849ebb8a49010bb330991418ec3be4.svg",
+    "static/media/grid-8.svg": "/static/media/grid-8.69e83f33583d72975d5033ca15cda61c.svg",
+    "index.html": "/index.html",
+    "static/media/ContactLocation.svg": "/static/media/ContactLocation.d42f56f081a955867b17c4d7bf93d438.svg",
+    "static/media/Мои анкеты.svg": "/static/media/Мои анкеты.a78c1792c317d29176552e6186e65d43.svg",
+    "static/media/ContactWorkHour.svg": "/static/media/ContactWorkHour.79b6280f07e94c67918eec266f16aaaf.svg",
+    "static/media/ContactEmail.svg": "/static/media/ContactEmail.9b6e6dfe7bbb4955bb6dfe8145d2df5b.svg",
+    "main.e175730c.css.map": "/static/css/main.e175730c.css.map",
+    "main.b1cdfc56.js.map": "/static/js/main.b1cdfc56.js.map"
+  },
+  "entrypoints": ["static/css/main.e175730c.css", "static/js/main.b1cdfc56.js"]
+}
