@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e175730c.css",
-    "main.js": "/static/js/main.b1cdfc56.js",
+    "main.js": "/static/js/main.c8a94d4f.js",
     "static/media/Background (1).png": "/static/media/Background (1).e50105a4080bd75be7ba.png",
     "static/media/Background.png": "/static/media/Background.06a012c435ebd62d044c.png",
     "static/media/asian-young-main-group-hospital-professional 1.png": "/static/media/asian-young-main-group-hospital-professional 1.d04a3e4d5422958bdd62.png",
@@ -20,7 +20,10 @@
     "static/media/ContactWorkHour.svg": "/static/media/ContactWorkHour.79b6280f07e94c67918eec266f16aaaf.svg",
     "static/media/ContactEmail.svg": "/static/media/ContactEmail.9b6e6dfe7bbb4955bb6dfe8145d2df5b.svg",
     "main.e175730c.css.map": "/static/css/main.e175730c.css.map",
-    "main.b1cdfc56.js.map": "/static/js/main.b1cdfc56.js.map"
+    "main.c8a94d4f.js.map": "/static/js/main.c8a94d4f.js.map"
   },
-  "entrypoints": ["static/css/main.e175730c.css", "static/js/main.b1cdfc56.js"]
+  "entrypoints": [
+    "static/css/main.e175730c.css",
+    "static/js/main.c8a94d4f.js"
+  ]
 }
