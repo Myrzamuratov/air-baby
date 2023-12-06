@@ -26,6 +26,11 @@
   justify-content: center;
   align-items: center;
 }
+.isEmpty {
+  font-size: 25px;
+  padding: 100px;
+  color: #0079a1;
+}
 @media all and (max-width: 1401px) {
   .news_all {
     width: 40%;

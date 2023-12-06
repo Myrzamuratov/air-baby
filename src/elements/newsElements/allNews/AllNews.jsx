@@ -35,36 +35,40 @@ const AllNews = ({
 
   return (
     <>
-      {visibleNews.map((item) => (
-        <article key={item.id} className="allNews_container">
-          <div className="allNews_image">
-            <img src={item.image} alt={item.title} />
-          </div>
-          <div className="allNews_dates">
-            <div className="data">
-              <CalendarTodayIcon sx={{ color: "#0079A1" }} />
-              {format(parseISO(item.created_at), "EEEE dd, MMMM yyyy")}
+      {visibleNews.length ? (
+        visibleNews.map((item) => (
+          <article key={item.id} className="allNews_container">
+            <div className="allNews_image">
+              <img src={item.image} alt={item.title} />
             </div>
-            <div className="byAuthor">
-              <Person2OutlinedIcon sx={{ color: "#0079A1" }} />
-              By Author
+            <div className="allNews_dates">
+              <div className="data">
+                <CalendarTodayIcon sx={{ color: "#0079A1" }} />
+                {format(parseISO(item.created_at), "EEEE dd, MMMM yyyy")}
+              </div>
+              <div className="byAuthor">
+                <Person2OutlinedIcon sx={{ color: "#0079A1" }} />
+                By Author
+              </div>
+              <BasicRating item={item} color="gray" />
             </div>
-            <BasicRating item={item} color="gray" />
-          </div>
-          <h3>{t(item.title)}</h3>
-          <p>{t(item.body.slice(0, 394))}....</p>
-          <button
-            className="news_button"
-            onClick={() => {
-              getOneNews(item.id);
-              addToRecentlyViewed(item);
-            }}
-          >
-            {translationNews.readMore}
-            <ArrowRightAltIcon />
-          </button>
-        </article>
-      ))}
+            <h3>{t(item.title)}</h3>
+            <p>{t(item.body.slice(0, 394))}....</p>
+            <button
+              className="news_button"
+              onClick={() => {
+                getOneNews(item.id);
+                addToRecentlyViewed(item);
+              }}
+            >
+              {translationNews.readMore}
+              <ArrowRightAltIcon />
+            </button>
+          </article>
+        ))
+      ) : (
+        <h3>Gen</h3>
+      )}
       <PaginationRanges
         totalItems={totalItems}
         itemsPerPage={itemsPerPage}

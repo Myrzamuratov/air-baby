@@ -10,6 +10,7 @@ const News = () => {
   const { getNews, news, getOneNews, addToRecentlyViewed } = useNews();
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("q") || "");
+
   function searching(item) {
     setSearch(item);
   }
@@ -19,9 +20,13 @@ const News = () => {
   }, [search]);
 
   const { lang, translationNews } = useLang();
+
   useEffect(() => {
     getNews();
   }, []);
+
+  // Check if news is truthy and not an empty array
+  const isNewsEmpty = !news || (Array.isArray(news) && news.length === 0);
 
   return (
     <div>
@@ -31,16 +36,20 @@ const News = () => {
       </div>
       <div className="news">
         <div className="news_all">
-          <AllNews
-            news={news}
-            translationNews={translationNews}
-            lang={lang}
-            getOneNews={getOneNews}
-            search={search}
-            addToRecentlyViewed={addToRecentlyViewed}
-          />
+          {isNewsEmpty ? (
+            <h3 className="isEmpty">{translationNews.empty}</h3>
+          ) : (
+            <AllNews
+              news={news}
+              translationNews={translationNews}
+              lang={lang}
+              getOneNews={getOneNews}
+              search={search}
+              addToRecentlyViewed={addToRecentlyViewed}
+            />
+          )}
         </div>
-        <NewsRecently searching={searching} />
+        {isNewsEmpty ? null : <NewsRecently searching={searching} />}
       </div>
     </div>
   );

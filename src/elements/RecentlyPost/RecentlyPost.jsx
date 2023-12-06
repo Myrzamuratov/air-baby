@@ -4,13 +4,18 @@ import { useLang } from "../../context/LangContextProvider";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import { format, parseISO } from "date-fns";
 import "./RecentlyPost.css";
+import { LocalActivity } from "@mui/icons-material";
 
 const RecentlyPost = () => {
-  const { recentlyViewed, getRecentlyViewed } = useNews();
+  const { getRecentlyViewed } = useNews();
   const { translationNews } = useLang();
   const { getOneNews } = useNews();
 
-  return (
+  // Retrieve recentlyViewed from localStorage and parse it into an array
+  const recentlyViewed =
+    JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+
+  return recentlyViewed.length > 0 ? (
     <div className="recent_parent">
       <h3>{translationNews.recentPost}</h3>
       <ul>
@@ -34,7 +39,7 @@ const RecentlyPost = () => {
         ))}
       </ul>
     </div>
-  );
+  ) : null;
 };
 
 export default RecentlyPost;

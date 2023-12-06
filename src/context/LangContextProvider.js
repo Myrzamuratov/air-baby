@@ -415,6 +415,7 @@ const LangContextProvider = ({ children }) => {
       prev: "Previous",
       next: "Next",
       comments: "Leave a comment...",
+      empty: "Empty",
     },
     ru: {
       newsMain: "Новости",
@@ -426,6 +427,7 @@ const LangContextProvider = ({ children }) => {
       prev: "Предыдущий",
       next: "Следующий",
       comments: "Оставить комментарий...",
+      empty: "Пусто",
     },
     ch: {
       newsMain: "新闻",
@@ -437,6 +439,7 @@ const LangContextProvider = ({ children }) => {
       prev: "上一页",
       next: "下一页",
       comments: "发表评论...",
+      empty: "空",
     },
   };
 
