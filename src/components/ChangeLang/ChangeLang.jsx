@@ -3,13 +3,13 @@ import "./ChangeLang.css";
 import { useLang } from "../../context/LangContextProvider";
 
 const ChangeLang = () => {
-  const { changeLang, lang } = useLang();
+  const { changeLang } = useLang();
+  const lang = localStorage.getItem("language");
 
   return (
     <div className="langChange">
-      <select onChange={(e) => changeLang(e.target.value)}>
-        <h5>{lang.toUpperCase()}</h5>
-
+      <select onChange={(e) => changeLang(e.target.value)} value={lang || ""}>
+        <option value="" disabled hidden></option>
         <option value="ru">RU</option>
         <option value="en">EN</option>
         <option value="ch">CH</option>
