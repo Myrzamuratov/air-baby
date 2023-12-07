@@ -59,11 +59,13 @@
 }
 @media all and (max-width: 500px) {
   .burger_main {
-    width: 60vh;
+    width: 100%;
+    text-align: center;
   }
-}
-@media all and (max-width: 400px) {
-  .burger_main {
-    width: 50vh;
+  .burgermenu_icon_close {
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
 }
