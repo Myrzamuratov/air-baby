@@ -504,6 +504,7 @@ const LangContextProvider = ({ children }) => {
       experience: "Describe your experience",
       post: "Post",
       cancel: "Cancel",
+      empty: "No reviews",
     },
     ru: {
       allReview: "Читать все отзывы",
@@ -515,6 +516,7 @@ const LangContextProvider = ({ children }) => {
       experience: "Опишите свой опыт",
       post: "Отправить",
       cancel: "Отмена",
+      empty: "Нет отзывов",
     },
     ch: {
       allReview: "阅读所有评论",
@@ -526,6 +528,7 @@ const LangContextProvider = ({ children }) => {
       experience: "描述您的经历",
       post: "发送",
       cancel: "取消",
+      empty: "无评论",
     },
   };
   const profile = {

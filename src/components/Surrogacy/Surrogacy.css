@@ -65,7 +65,7 @@
 }
 @media all and (max-width: 400px) {
   .surrogacyMain {
-    height: 50vh;
+    height: 40vh;
     font-size: 40px;
   }
 }

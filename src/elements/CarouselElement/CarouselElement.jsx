@@ -69,30 +69,43 @@ const CarouselElement = () => {
         alignItems: "center",
       }}
     >
-      <Swiper
-        slidesPerView={slidesPerView}
-        spaceBetween={30}
-        navigation={{ clickable: true }}
-        modules={[Navigation]}
-        className="mySwiper"
-      >
-        {reviews.map((item, index) => (
-          <SwiperSlide key={index}>
-            <article>
-              <h3>{item.user}</h3>
-              <p>{item.comment}</p>
-            </article>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <div className="CarouselButton">
-        <Button onClick={() => navigate("/reviews")} variant="contained">
-          {carousel.allReview}
-        </Button>
-        <Button onClick={handleModalOpen} variant="contained">
-          {carousel.leaveReview}
-        </Button>
-      </div>
+      {reviews.length !== 0 ? (
+        <Swiper
+          slidesPerView={slidesPerView}
+          spaceBetween={30}
+          navigation={{ clickable: true }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          {reviews.map((item, index) => (
+            <SwiperSlide key={index}>
+              <article>
+                <h3>{item.user}</h3>
+                <p>{item.comment}</p>
+              </article>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div className="empty_review">
+          <h3>{carousel.empty}</h3>
+          <Button onClick={handleModalOpen} variant="contained">
+            {carousel.leaveReview}
+          </Button>
+        </div>
+      )}
+
+      {reviews.length !== 0 ? (
+        <div className="CarouselButton">
+          <Button onClick={() => navigate("/reviews")} variant="contained">
+            {carousel.allReview}
+          </Button>
+          <Button onClick={handleModalOpen} variant="contained">
+            {carousel.leaveReview}
+          </Button>
+        </div>
+      ) : null}
+
       {modal ? (
         <div className="overlay">
           <div className="modal">
