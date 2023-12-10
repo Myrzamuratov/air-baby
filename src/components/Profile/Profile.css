@@ -12,3 +12,13 @@
   font-size: 36px;
   font-weight: 500;
 }
+@media all and (max-width: 1000px) {
+  .profile_elements {
+    font-size: 32px;
+  }
+}
+@media all and (max-width: 700px) {
+  .profile_elements {
+    font-size: 25px;
+  }
+}

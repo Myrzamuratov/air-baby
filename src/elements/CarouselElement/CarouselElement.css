@@ -100,11 +100,13 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(234, 230, 230, 0.9); /* Чёрный цвет с прозрачностью 0.7 */
+  background: rgba(234, 230, 230, 0.99); /* Чёрный цвет с прозрачностью 0.7 */
   padding: 20px;
   z-index: 1000;
-  width: 80%; /* Установите подходящую ширину */
-  /* Добавьте другие стили по необходимости */
+  width: 80%;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 10px 30px -10px #0079a1;
+  box-shadow: 0px 10px 30px -10px #023140;
 }
 .empty_review {
   display: flex;

@@ -118,7 +118,7 @@
 }
 @media all and (max-width: 501px) {
   .eggDonationMain {
-    height: 380px;
+    height: 350px;
     padding-bottom: 30px;
   }
   .blueVectorDiv {
@@ -142,7 +142,7 @@
 }
 @media all and (max-width: 331px) {
   .eggDonationMain {
-    height: 280px;
+    height: 220px;
     padding-bottom: 30px;
   }
   .blueVectorDiv {

@@ -11,50 +11,29 @@ const ContactUs = () => {
 
   return (
     <section className="contact_main">
-      <div className="contact_form">
-        <header className="contact_form_header">
-          <h4>{contactUsElements.getInTouch.toUpperCase()}</h4>
-          <h3>{contactUsElements.contactUs.toUpperCase()}</h3>
-        </header>
-        <form className="contact_form_input">
-          <input type="text" placeholder={contactUsElements.name} />
-
-          <input type="email" placeholder={contactUsElements.email} />
-
-          <input
-            type="text"
-            placeholder={contactUsElements.subject}
-            id="inputBig"
-          />
-
-          <textarea placeholder={contactUsElements.message}></textarea>
-          <button>{contactUsElements.submit}</button>
-        </form>
-      </div>
-
       <aside className="contact_info">
         <ul className="contact_info_ul">
           <li>
             <PhoneIcon className="svg" />
             <span>{contactUsElements.emergency}</span>
-            <p>+996 (000) 000 000 </p>
-            <p>+996 (000) 000 000 </p>
+            <p>+996 (500) 531 131 </p>
+            <p>+996 (557) 180 804 </p>
           </li>
           <li>
             <LocationIcon className="svg" />
             <span>{contactUsElements.location}</span>
-            <p>0123 Some place</p>
-            <p>9876 Some country</p>
+            <p>{contactUsElements.address}</p>
+            <p>{contactUsElements.country}</p>
           </li>
           <li>
             <EmailIcon className="svg" />
             <span>{contactUsElements.email}</span>
-            <p>email@email.com</p>
+            <a type="email">myairbaby@gmail.com</a>
           </li>
           <li>
             <WorkHourIcon className="svg" />
             <span>{contactUsElements.workingHours}</span>
-            <p>{contactUsElements.workDay} 09:00-20:00</p>
+            <p>{contactUsElements.workDay} 09:00-18:00</p>
             <p>{contactUsElements.restDay}</p>
           </li>
         </ul>
