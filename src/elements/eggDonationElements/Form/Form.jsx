@@ -296,11 +296,7 @@ const Form = () => {
                 />
               }
               label={
-                lang === "en"
-                  ? "Single"
-                  : lang === "ru"
-                  ? "Холост/Не замужем"
-                  : "单身"
+                lang === "en" ? "Single" : lang === "ru" ? "Не замужем" : "单身"
               }
             />
             <FormControlLabel
@@ -314,11 +310,7 @@ const Form = () => {
                 />
               }
               label={
-                lang === "en"
-                  ? "Married"
-                  : lang === "ru"
-                  ? "Замужем/Женат"
-                  : "已婚"
+                lang === "en" ? "Married" : lang === "ru" ? "Замужем" : "已婚"
               }
             />
             <FormControlLabel
@@ -332,11 +324,7 @@ const Form = () => {
                 />
               }
               label={
-                lang === "en"
-                  ? "Widowed"
-                  : lang === "ru"
-                  ? "Вдовец/Вдова"
-                  : "寡居"
+                lang === "en" ? "Widowed" : lang === "ru" ? "Вдова" : "寡居"
               }
             />
             <FormControlLabel
@@ -353,7 +341,7 @@ const Form = () => {
                 lang === "en"
                   ? "Divorced"
                   : lang === "ru"
-                  ? "Разведен/Разведена"
+                  ? "Разведена"
                   : "离婚"
               }
             />

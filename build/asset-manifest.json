@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.e175730c.css",
-    "main.js": "/static/js/main.c8a94d4f.js",
+    "main.css": "/static/css/main.5079971b.css",
+    "main.js": "/static/js/main.d8d8f8cf.js",
     "static/media/Background (1).png": "/static/media/Background (1).e50105a4080bd75be7ba.png",
     "static/media/Background.png": "/static/media/Background.06a012c435ebd62d044c.png",
     "static/media/asian-young-main-group-hospital-professional 1.png": "/static/media/asian-young-main-group-hospital-professional 1.d04a3e4d5422958bdd62.png",
-    "static/media/image 3 (1).png": "/static/media/image 3 (1).1b5cd8ec199fdb8b61b1.png",
+    "static/media/photo__y.jpg": "/static/media/photo_5456150746182572725_y.927b6fa4fe8b54d990f5.jpg",
+    "static/media/Без названия.jpg": "/static/media/Без названия.c86597792e0a8e1b1170.jpg",
     "static/media/Group 8.svg": "/static/media/Group 8.00673f551bd3bb85e30544195a842984.svg",
     "static/media/Group9.svg": "/static/media/Group9.b18e3f2e7de9c5fda5e38d2626fe147b.svg",
     "static/media/Group 11.svg": "/static/media/Group 11.c77a0cb0c116129f5b5efe1df81992f9.svg",
@@ -19,11 +20,11 @@
     "static/media/Мои анкеты.svg": "/static/media/Мои анкеты.a78c1792c317d29176552e6186e65d43.svg",
     "static/media/ContactWorkHour.svg": "/static/media/ContactWorkHour.79b6280f07e94c67918eec266f16aaaf.svg",
     "static/media/ContactEmail.svg": "/static/media/ContactEmail.9b6e6dfe7bbb4955bb6dfe8145d2df5b.svg",
-    "main.e175730c.css.map": "/static/css/main.e175730c.css.map",
-    "main.c8a94d4f.js.map": "/static/js/main.c8a94d4f.js.map"
+    "main.5079971b.css.map": "/static/css/main.5079971b.css.map",
+    "main.d8d8f8cf.js.map": "/static/js/main.d8d8f8cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.e175730c.css",
-    "static/js/main.c8a94d4f.js"
+    "static/css/main.5079971b.css",
+    "static/js/main.d8d8f8cf.js"
   ]
 }

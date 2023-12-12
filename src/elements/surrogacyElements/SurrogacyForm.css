@@ -46,6 +46,7 @@
   display: flex;
   width: 95%;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .surrogacy_button {
   color: #8e8e8e;
