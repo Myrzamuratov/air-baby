@@ -92,7 +92,7 @@ const Advantages = () => {
     <div className="advantegesDiv">
       <div className="mainText">
         {lang === "en" ? (
-          <h2>Our Advanteges</h2>
+          <h2>Advanteges</h2>
         ) : lang === "ru" ? (
           <h2>Наши преимущества</h2>
         ) : (

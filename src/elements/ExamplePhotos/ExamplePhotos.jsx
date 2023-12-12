@@ -1,7 +1,7 @@
 import React from "react";
 import "./ExamplePhoto.css";
-import example1 from "../../images/ExamplePhotos/image 1.png";
-import example2 from "../../images/ExamplePhotos/image 3 (1).png";
+import example1 from "../../images/ExamplePhotos/photo_5456150746182572725_y.jpg";
+import example2 from "../../images/ExamplePhotos/Без названия.jpg";
 import { useLang } from "../../context/LangContextProvider";
 
 const ExamplePhotos = () => {

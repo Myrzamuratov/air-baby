@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   width: 70%;
-  height: 80vh;
+  height: 100vh;
   margin: auto;
   font-family: Work Sans;
   flex-wrap: wrap;
@@ -152,9 +152,6 @@
   }
 }
 @media all and (max-width: 1000px) {
-  .contact_main {
-    height: 100%;
-  }
   .contact_form {
     width: 80%;
     margin-top: 50px;
@@ -192,8 +189,13 @@
 @media all and (max-width: 400px) {
   .contact_info_ul li {
     margin: 5px 0;
-    padding: 5px;
-    justify-content: center;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .contact_info_ul li p {
+    text-align: center;
   }
   .contact_info_ul {
     height: 350px;

@@ -9,7 +9,7 @@ const PaginationRanges = ({ totalItems, itemsPerPage, handlePageChange }) => {
 
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   return (
-    <Stack spacing={2}>
+    <Stack sx={{ marginBottom: "15px" }} spacing={2}>
       <Pagination
         count={totalPages}
         page={currentPage}

@@ -19,59 +19,46 @@ const NewsComments = () => {
     addComment(formData, id);
   };
   return (
-    <div>
-      <div className="comment_main">
-        <div className="comment_input_div">
-          <div>
-            <img className="comment_avatar" src={avatar} alt="user" />
-          </div>
-          <div className="comment_input">
-            <input
-              onChange={(e) => setComment(e.target.value)}
-              type="text"
-              placeholder={translationNews.comments}
-            />
-            <button onClick={handleSave}>
-              <SendIcon fontSize="large" sx={{ color: "#a6a6a6" }} />
-            </button>
-          </div>
+    <div className="comment_main">
+      <div className="comment_input_div">
+        <div>
+          <img className="comment_avatar" src={avatar} alt="user" />
         </div>
-        <div className="other_comments">
-          {comments.map((item) => {
-            const userRating = reviewers.find(
-              (reviewer) => reviewer.user.toString() === item.user.toString()
-            ) || { user: item.user, id: "false", rating: "0" };
+        <div className="comment_input">
+          <input
+            onChange={(e) => setComment(e.target.value)}
+            type="text"
+            placeholder={translationNews.comments}
+          />
+          <button onClick={handleSave}>
+            <SendIcon fontSize="large" sx={{ color: "#a6a6a6" }} />
+          </button>
+        </div>
+      </div>
+      <div className="other_comments">
+        {comments.map((item) => {
+          const userRating = reviewers.find(
+            (reviewer) => reviewer.user.toString() === item.user.toString()
+          ) || { user: item.user, id: "false", rating: "0" };
 
-            return (
-              <div className="user_comment" key={item.user}>
-                <div className="user_comment_avatar">
-                  <img
-                    className="comment_avatar"
-                    src={avatar}
-                    alt={item.user}
-                  />
-                </div>
-                <div className="user_comment_text">
-                  <h4>{item.user}</h4>
-                  {userRating ? (
-                    <BasicRating
-                      item={userRating}
-                      readOnly={true}
-                      color="gray"
-                    />
-                  ) : (
-                    <BasicRating
-                      item={{ id: "false", rating: 0 }}
-                      color="gray"
-                    />
-                  )}
-
-                  <p>{item.comment}</p>
-                </div>
+          return (
+            <div className="user_comment" key={item.user}>
+              <div className="user_comment_avatar">
+                <img className="comment_avatar" src={avatar} alt={item.user} />
               </div>
-            );
-          })}
-        </div>
+              <div className="user_comment_text">
+                <h4>{item.user}</h4>
+                {userRating ? (
+                  <BasicRating item={userRating} readOnly={true} color="gray" />
+                ) : (
+                  <BasicRating item={{ id: "false", rating: 0 }} color="gray" />
+                )}
+
+                <p>{item.comment}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

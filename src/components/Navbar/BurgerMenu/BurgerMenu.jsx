@@ -4,8 +4,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 import { useLang } from "../../../context/LangContextProvider";
+import { useAuth } from "../../../context/AuthContextProvider";
 
 const BurgerMenu = ({ navigateElements, authElements }) => {
+  const { logout } = useAuth();
   const { lang } = useLang();
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
 
@@ -48,7 +50,15 @@ const BurgerMenu = ({ navigateElements, authElements }) => {
           <ul className="navigateContainer">
             {authElements.map((item) => (
               <li key={item.id}>
-                <Link onClick={closeBurgerMenu} to={item.link}>
+                <Link
+                  onClick={() => {
+                    closeBurgerMenu && closeBurgerMenu();
+                    if (item.link === "") {
+                      logout();
+                    }
+                  }}
+                  to={item.link}
+                >
                   {item.name}
                 </Link>
               </li>

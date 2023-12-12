@@ -58,7 +58,14 @@ export default function SearchElement({ secondSearch }) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, backgroundColor: "#0079A1", padding: "10px" }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        backgroundColor: "#0079A1",
+        padding: "5px",
+        borderRadius: "5px",
+      }}
+    >
       <Search
         sx={{
           display: "flex",

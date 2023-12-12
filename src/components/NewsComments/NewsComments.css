@@ -1,18 +1,17 @@
 .comment_main {
-  width: 100%;
+  width: 80%;
   margin: auto;
   margin-top: 50px;
 }
 .comment_input_div {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
   margin-bottom: 40px;
 }
 .comment_input {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: start;
   align-items: center;
 }
 .comment_input input {
@@ -25,9 +24,7 @@
   justify-content: space-around;
   padding: 15px;
 }
-.user_comment_avatar {
-  width: 10%;
-}
+
 .user_comment_text {
   width: 90%;
   border: 1px solid #a6a6a6;
@@ -42,13 +39,14 @@
   color: #747572;
   font-size: 18px;
   font-weight: 400;
-  width: 70%;
+  width: 75%;
 }
 .user_comment_text p {
   color: #a6a6a6;
   font-size: 18px;
   font-weight: 400;
   margin-top: 10px;
+  width: 100%;
 }
 @media all and (max-width: 900px) {
   .user_comment_text h4 {

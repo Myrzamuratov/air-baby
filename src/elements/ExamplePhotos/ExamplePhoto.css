@@ -8,3 +8,11 @@
 .example_images_main h3 {
   text-align: center;
 }
+.example_images_photos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.example_images_photos img {
+  width: 20%;
+}

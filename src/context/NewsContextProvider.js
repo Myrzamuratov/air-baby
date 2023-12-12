@@ -84,7 +84,7 @@ const NewsContextProvider = ({ children }) => {
   async function addComment(formData, id) {
     try {
       await axios.post(`${API}news/${id}/add_comment/`, formData, getTokens());
-      getComments();
+      getComments(id);
     } catch (error) {
       console.log(error);
       setModalError(`Failed to add comment. ${getErrorMessage(error)}`);
