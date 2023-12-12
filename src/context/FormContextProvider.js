@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API, getTokens } from "../helpers/const";
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 import Modal from "react-modal"; // Import the modal library
 
 export const FormContext = createContext();
@@ -10,6 +10,7 @@ const FormContextProvider = ({ children }) => {
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const [modalError, setModalError] = React.useState("");
   const [modalSuccess, setModalSuccess] = React.useState("");
+  const [loading, setLoading] = useState(false);
 
   const getErrorMessage = (error) => {
     if (error.response && error.response.data && error.response.data.detail) {
@@ -22,6 +23,7 @@ const FormContextProvider = ({ children }) => {
   };
 
   async function createSurrogacyApplication(formData) {
+    setLoading(true);
     try {
       await axios.post(
         `${API}surrogacy/create-application/`,
@@ -37,10 +39,13 @@ const FormContextProvider = ({ children }) => {
         `Failed to create surrogacy application. ${getErrorMessage(error)}`
       );
       openModalError();
+    } finally {
+      setLoading(false);
     }
   }
 
   async function createDonnorApplication(formData) {
+    setLoading(true);
     try {
       const res = await axios.post(
         `${API}donor/create/`,
@@ -56,6 +61,8 @@ const FormContextProvider = ({ children }) => {
         `Failed to create donor application. ${getErrorMessage(error)}`
       );
       openModalError();
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -109,6 +116,7 @@ const FormContextProvider = ({ children }) => {
     closeModal,
     modalError,
     modalSuccess,
+    loading,
   };
 
   return (

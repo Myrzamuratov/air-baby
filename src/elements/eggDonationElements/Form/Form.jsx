@@ -7,6 +7,7 @@ import { useForm } from "../../../context/FormContextProvider";
 import { useLang } from "../../../context/LangContextProvider";
 import { logRoles } from "@testing-library/react";
 import ExamplePhotos from "../../ExamplePhotos/ExamplePhotos";
+import { CircularProgress } from "@mui/material";
 
 const Form = () => {
   const [firstName, setFirstName] = useState("");
@@ -42,7 +43,7 @@ const Form = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [comment, setComment] = useState("");
   const [email, setEmail] = useState("");
-  const { createDonnorApplication } = useForm();
+  const { createDonnorApplication, loading } = useForm();
 
   function handleSave() {
     if (
@@ -718,9 +719,13 @@ const Form = () => {
           </div>
         </div>
         <div className="button_div">
-          <button className="surrogacy_button" onClick={handleSave}>
-            {translationsEgg.submitButton}
-          </button>
+          {loading ? (
+            <CircularProgress />
+          ) : (
+            <button className="surrogacy_button" onClick={handleSave}>
+              {translationsEgg.submitButton}
+            </button>
+          )}
         </div>
       </div>
     </div>

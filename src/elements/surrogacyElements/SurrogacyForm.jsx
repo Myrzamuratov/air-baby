@@ -6,6 +6,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { useForm } from "../../context/FormContextProvider";
 import Slider from "@mui/material/Slider";
 import { useLang } from "../../context/LangContextProvider";
+import { CircularProgress } from "@mui/material";
 
 const SurrogacyForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -50,7 +51,7 @@ const SurrogacyForm = () => {
   const [fullbodySelfie, setFullbodySelfie] = useState();
   const [passportPhoto, setPassportPhoto] = useState();
   const [managerName, setManagerName] = useState("");
-  const { createSurrogacyApplication } = useForm();
+  const { createSurrogacyApplication, loading } = useForm();
 
   const createChildrenArray = (count) => {
     const newChildrenArray = [];
@@ -756,9 +757,13 @@ const SurrogacyForm = () => {
           <div className="inputDiv"></div>
         </div>
         <div className="button_div">
-          <button className="surrogacy_button" onClick={handleSave}>
-            {translationsEgg.submitButton}
-          </button>
+          {loading ? (
+            <CircularProgress />
+          ) : (
+            <button className="surrogacy_button" onClick={handleSave}>
+              {translationsEgg.submitButton}
+            </button>
+          )}
         </div>
       </div>
     </div>
