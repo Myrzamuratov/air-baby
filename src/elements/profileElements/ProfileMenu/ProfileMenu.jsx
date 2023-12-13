@@ -30,20 +30,22 @@ const ProfileMenu = ({ setChangeElement }) => {
   };
 
   return (
-    <ul className="profile_menu_main">
-      {menuElements.map((item) => (
-        <li
-          className={`profile_menu_element ${
-            activeMenuItem === item.id ? "active" : ""
-          }`}
-          key={item.id}
-          onClick={() => handleMenuItemClick(item)}
-        >
-          {item.icon}
-          <h3>{item.name}</h3>
-        </li>
-      ))}
-    </ul>
+    <div className="profile_menu_main">
+      <ul>
+        {menuElements.map((item) => (
+          <li
+            className={`profile_menu_element ${
+              activeMenuItem === item.id ? "active" : ""
+            }`}
+            key={item.id}
+            onClick={() => handleMenuItemClick(item)}
+          >
+            {item.icon}
+            <h3>{item.name}</h3>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

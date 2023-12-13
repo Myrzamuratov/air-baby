@@ -28,7 +28,9 @@ const Profile = () => {
                 {profile.welcome}! {userData.email}
               </h3>
             ) : changeElement === "/appForm" ? (
-              <ProfileAppForms userData={userData} />
+              userData.donor_applications.map((item) => (
+                <ProfileAppForms donorAppID={item.id} />
+              ))
             ) : null}
           </>
         )}

@@ -65,6 +65,21 @@ const FormContextProvider = ({ children }) => {
       setLoading(false);
     }
   }
+  const [myDonorApp, setMyDonorApp] = useState();
+
+  async function getOneDonorApp(id) {
+    try {
+      const res = await axios.get(`${API}donor/detail/${id}/`, getTokens());
+      setMyDonorApp((prevDonorApp) => {
+        return res.data;
+      });
+    } catch (error) {
+      console.log(error);
+      setModalError(
+        `Failed to create donor application. ${getErrorMessage(error)}`
+      );
+    }
+  }
 
   const openModalError = () => {
     setModalIsOpen(true);
@@ -117,6 +132,8 @@ const FormContextProvider = ({ children }) => {
     modalError,
     modalSuccess,
     loading,
+    getOneDonorApp,
+    myDonorApp,
   };
 
   return (

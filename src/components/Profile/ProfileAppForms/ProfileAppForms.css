@@ -1,0 +1,106 @@
+.myForm_main {
+  height: 100%;
+}
+.myForm_donor_body {
+  display: flex;
+  flex-direction: column;
+}
+.myForm_donor_body h3 {
+  text-align: start;
+  padding-left: 150px;
+  margin: 50px;
+}
+.main_h3 {
+  font-size: 36px;
+}
+.donor_body_info {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-top: 1px solid #b6b6a5;
+  border-bottom: 1px solid #b6b6a5;
+  padding: 25px 0;
+  padding-left: 50px;
+  font-size: 24px;
+  width: 100%;
+}
+.donor_body_info_item {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-right: 50px;
+  flex-wrap: wrap;
+}
+.donor_body_info_item img {
+  width: 25%;
+}
+@media all and (max-width: 1100px) {
+  .donor_body_info_item label {
+    font-size: 20px;
+  }
+  .donor_body_info_item p {
+    font-size: 20px;
+  }
+  .myForm_donor_body h3 {
+    text-align: center;
+    margin: 30px;
+    padding: 0;
+  }
+  .main_h3 {
+    font-size: 32px;
+  }
+}
+@media all and (max-width: 900px) {
+  .donor_body_info {
+    padding: 10px;
+    padding-left: 15px;
+  }
+  .donor_body_info_item {
+    margin-right: 30px;
+  }
+  .donor_body_info_item label {
+    font-size: 18px;
+  }
+  .donor_body_info_item p {
+    font-size: 18px;
+  }
+  .main_h3 {
+    font-size: 30px;
+  }
+  .myForm_donor_body h3 {
+    font-size: 22px;
+  }
+}
+@media all and (max-width: 700px) {
+  .donor_body_info {
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+  }
+  .donor_body_info_item {
+    margin: 5px 0;
+  }
+  .myForm_donor_body h3 {
+    margin: 20px;
+  }
+  .main_h3 {
+    font-size: 25px;
+  }
+  .myForm_donor_body h3 {
+    font-size: 18px;
+  }
+}
+@media all and (max-width: 500px) {
+  .donor_body_info_item label {
+    font-size: 15px;
+  }
+  .donor_body_info_item p {
+    font-size: 15px;
+  }
+  .main_h3 {
+    font-size: 20px;
+  }
+  .myForm_donor_body h3 {
+    font-size: 17px;
+  }
+}
