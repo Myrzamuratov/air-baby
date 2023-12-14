@@ -1,0 +1,10 @@
+.myForm_main {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.donor_body_info {
+  flex-wrap: wrap;
+}
+.donor_body_info_item p {
+  text-align: center;
+}

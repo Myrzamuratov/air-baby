@@ -11,7 +11,7 @@ const ProfileAppForms = ({ donorAppID }) => {
   return (
     <div className="myForm_main">
       <div className="myForm_donor">
-        <h3 className="main_h3">Your Surrogacy Application form</h3>
+        <h3 className="main_h3">Your Donor Application form</h3>
         {myDonorApp ? (
           <div className="myForm_donor_body">
             <div className="donor_body_info">

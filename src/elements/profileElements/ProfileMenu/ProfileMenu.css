@@ -69,19 +69,13 @@
     margin-left: 5px;
   }
 }
-@media all and (max-width: 500px) {
-  .profile_menu_icon {
-    display: none;
-  }
-  .profile_menu_element {
-    padding: 5px;
-  }
+@media all and (max-width: 600px) {
   .profile_menu_main {
-    padding: 50px 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
   }
-}
-@media all and (max-width: 400px) {
-  .profile_menu_main {
-    width: 35%;
+  .profile_menu_main ul {
+    display: flex;
   }
 }

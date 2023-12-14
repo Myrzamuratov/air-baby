@@ -80,6 +80,32 @@ const FormContextProvider = ({ children }) => {
       );
     }
   }
+  const [mySurrogacyApp, setSurrogacyApp] = useState();
+
+  async function getOneSurrogacyApp(id) {
+    try {
+      const res = await axios.get(
+        `${API}surrogacy/my_application/`,
+        getTokens()
+      );
+
+      if (Array.isArray(res.data) && res.data.length > 0) {
+        // Если данные - массив, берем первый элемент
+        setSurrogacyApp((prevDonorApp) => res.data[0]);
+      } else if (!Array.isArray(res.data)) {
+        // Если данные не являются массивом, устанавливаем их как есть
+        setSurrogacyApp((prevDonorApp) => res.data);
+      } else {
+        // В случае пустого массива или других случаев, можно обработать по вашему усмотрению
+        setSurrogacyApp(null); // или пустой объект: setSurrogacyApp({})
+      }
+    } catch (error) {
+      console.log(error);
+      setModalError(
+        `Failed to create surrogacy application. ${getErrorMessage(error)}`
+      );
+    }
+  }
 
   const openModalError = () => {
     setModalIsOpen(true);
@@ -134,6 +160,8 @@ const FormContextProvider = ({ children }) => {
     loading,
     getOneDonorApp,
     myDonorApp,
+    getOneSurrogacyApp,
+    mySurrogacyApp,
   };
 
   return (

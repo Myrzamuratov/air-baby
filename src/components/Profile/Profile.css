@@ -14,6 +14,7 @@
   min-height: 100vh;
   background-color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 50px 0;
@@ -26,5 +27,13 @@
 @media all and (max-width: 700px) {
   .profile_elements {
     font-size: 25px;
+  }
+}
+@media all and (max-width: 600px) {
+  .profile_main {
+    flex-direction: column;
+  }
+  .profile_elements {
+    width: 100%;
   }
 }
