@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useForm } from "../../../context/FormContextProvider";
 import "./ProfileAppForms.css";
+import { useLang } from "../../../context/LangContextProvider";
 
 const ProfileAppForms = ({ donorAppID }) => {
   console.log(donorAppID);
@@ -8,163 +9,164 @@ const ProfileAppForms = ({ donorAppID }) => {
   useEffect(() => {
     getOneDonorApp(donorAppID);
   }, [donorAppID]);
+  const { myFormLang } = useLang();
   return (
     <div className="myForm_main">
       <div className="myForm_donor">
-        <h3 className="main_h3">Your Donor Application form</h3>
+        <h3 className="main_h3">{myFormLang.yoDonorAppForm}</h3>
         {myDonorApp ? (
           <div className="myForm_donor_body">
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>First Name: </label>
+                <label>{myFormLang.firstName}: </label>
                 <p>{myDonorApp.first_name}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Last Name: </label>
+                <label>{myFormLang.lastName}: </label>
                 <p>{myDonorApp.last_name}</p>
               </div>
             </div>
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Date of birth: </label>
+                <label>{myFormLang.dateOfBirth}: </label>
                 <p>{myDonorApp.date_of_birth}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Nationality: </label>
+                <label>{myFormLang.nationality}: </label>
                 <p>{myDonorApp.nationality}</p>
               </div>
             </div>
 
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Country of Residence: </label>
+                <label>{myFormLang.country}: </label>
                 <p>{myDonorApp.country_of_residence}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Residential address: </label>
+                <label>{myFormLang.address}: </label>
                 <p>{myDonorApp.address}</p>
               </div>
             </div>
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Education: </label>
+                <label>{myFormLang.education}: </label>
                 <p>{myDonorApp.education}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Current job: </label>
+                <label>{myFormLang.currentJob}: </label>
                 <p>{myDonorApp.current_job}</p>
               </div>
             </div>
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Marital Status: </label>
+                <label>{myFormLang.maritalStatus}: </label>
                 <p>{myDonorApp.height}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Experience of Donation: </label>
+                <label>{myFormLang.expOfDonation}: </label>
                 <p>{myDonorApp.experience_of_donation}</p>
               </div>
             </div>
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Willingness to Travel: </label>
+                <label>{myFormLang.willingnessToTravel}: </label>
                 <p>{myDonorApp.willingness_to_travel}</p>
               </div>
             </div>
-            <h3>Physical Characteristics</h3>
+            <h3>{myFormLang.physicalCharacteristics}</h3>
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Weight: </label>
+                <label>{myFormLang.weight}: </label>
                 <p>{myDonorApp.weight}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Height: </label>
+                <label>{myFormLang.height}: </label>
                 <p>{myDonorApp.height}</p>
               </div>
             </div>
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Blood type: </label>
+                <label>{myFormLang.bloodType}: </label>
                 <p>{myDonorApp.physical_characteristics}</p>
               </div>
             </div>
 
-            <h3>Children/family</h3>
+            <h3>{myFormLang.childrenFam}</h3>
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Number of Children: </label>
+                <label>{myFormLang.numberOfChildren}: </label>
                 <p>{myDonorApp.children}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Number of Siblings: </label>
+                <label>{myFormLang.numberOfSiblings}: </label>
                 <p>{myDonorApp.brothers_sisters}</p>
               </div>
             </div>
 
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Mother’s Hair color: </label>
+                <label>{myFormLang.mothersHairColor}: </label>
                 <p>{myDonorApp.mothers_hair_colour}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Mother’s Eye color: </label>
+                <label>{myFormLang.mothersEyeColor}: </label>
                 <p>{myDonorApp.mothers_eye_colour}</p>
               </div>
             </div>
 
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Father’s Hair color: </label>
+                <label>{myFormLang.fathersHairColor}: </label>
                 <p>{myDonorApp.fathers_hair_colour}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Father’s Eye color: </label>
+                <label>{myFormLang.fathersEyeColor}: </label>
                 <p>{myDonorApp.fathers_eye_colour}</p>
               </div>
             </div>
 
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Hobby: </label>
+                <label>{myFormLang.hobby}: </label>
                 <p>{myDonorApp.hobby}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Personality type: </label>
+                <label>{myFormLang.personalityType}: </label>
                 <p>{myDonorApp.personality_type}</p>
               </div>
             </div>
 
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Health Status: </label>
+                <label>{myFormLang.healthStatus}: </label>
                 <p>{myDonorApp.health_status}</p>
               </div>
             </div>
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Photo of the face: </label>
-                <img src={myDonorApp.photo_fas} />
+                <label>{myFormLang.facePhoto}: </label>
+                <img src={myDonorApp.photo_fas} alt="face" />
               </div>
               <div className="donor_body_info_item">
-                <label>Photo of the full body: </label>
-                <img src={myDonorApp.photo_full} />
+                <label>{myFormLang.fullBodyPhoto}: </label>
+                <img src={myDonorApp.photo_full} alt="body" />
               </div>
             </div>
 
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Phone Number: </label>
+                <label>{myFormLang.phoneNumber}: </label>
                 <p>{myDonorApp.phone_number}</p>
               </div>
               <div className="donor_body_info_item">
-                <label>Email: </label>
+                <label>{myFormLang.email}: </label>
                 <p>{myDonorApp.user}</p>
               </div>
             </div>
 
             <div className="donor_body_info">
               <div className="donor_body_info_item">
-                <label>Comment or Message: </label>
+                <label>{myFormLang.comments}: </label>
                 <p>{myDonorApp.comment}</p>
               </div>
             </div>
