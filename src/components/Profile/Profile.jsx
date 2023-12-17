@@ -61,8 +61,8 @@ const Profile = () => {
                   ))
                 )
             ) : userData.is_allowed ? (
-              donorList && donorList.results && donorList.results.length > 0 ? (
-                donorList.results.map((item) => (
+              donorList && donorList && donorList.length > 0 ? (
+                donorList.map((item) => (
                   <DonorList donor={item} key={item.id} />
                 ))
               ) : (
