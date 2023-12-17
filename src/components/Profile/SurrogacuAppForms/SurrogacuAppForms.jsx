@@ -247,18 +247,27 @@ const SurrogacuAppForms = ({ donorAppID }) => {
             <div className="donor_body_info">
               <div className="donor_body_info_item">
                 <label>{myFormLang.passportPhoto}: </label>
-                <img src={mySurrogacyApp.passport_photo} alt="Passport" />
+                <img
+                  src={`https://api.myairbaby.net${mySurrogacyApp.passport_photo}`}
+                  alt="Passport"
+                />
               </div>
               <div className="donor_body_info_item">
                 <label>{myFormLang.facePhoto}: </label>
-                <img src={mySurrogacyApp.face_photo} alt="Face" />
+                <img
+                  src={`https://api.myairbaby.net${mySurrogacyApp.face_photo}`}
+                  alt="Face"
+                />
               </div>
             </div>
 
             <div className="donor_body_info">
               <div className="donor_body_info_item">
                 <label>{myFormLang.fullBodyPhoto}: </label>
-                <img src={mySurrogacyApp.full_body_selfie} alt="Body" />
+                <img
+                  src={`https://api.myairbaby.net${mySurrogacyApp.full_body_selfie}`}
+                  alt="Body"
+                />
               </div>
             </div>
           </div>
