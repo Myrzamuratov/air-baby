@@ -8,3 +8,11 @@
 .donor_body_info_item p {
   text-align: center;
 }
+.img-round {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px;
+}
+#image_div {
+  align-items: center;
+}

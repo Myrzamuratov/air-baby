@@ -51,6 +51,9 @@ export default function DonorList({ donor }) {
   useEffect(() => {
     setExpanded(false);
   }, []);
+  const openImage = (imageUrl) => {
+    window.open(imageUrl, "_blank");
+  };
 
   const { myFormLang } = useLang();
   return (
@@ -213,23 +216,38 @@ export default function DonorList({ donor }) {
             </div>
 
             <div className="donor_body_info">
-              <div className="donor_body_info_item">
+              <div className="donor_body_info_item" id="image_div">
                 <label>{myFormLang.facePhoto}: </label>
-                <img src={donor.photo_fas} alt="" />
+                <img
+                  src={donor.photo_fas}
+                  alt="face"
+                  className="img-round"
+                  onClick={() => openImage(`${donor.facePhoto}`)}
+                />
               </div>
             </div>
 
             <div className="donor_body_info">
-              <div className="donor_body_info_item">
+              <div className="donor_body_info_item" id="image_div">
                 <label>{myFormLang.fullBodyPhoto}: </label>
-                <img src={donor.photo_full} alt="" />
+                <img
+                  src={donor.photo_full}
+                  alt="full body"
+                  className="img-round"
+                  onClick={() => openImage(`${donor.photo_full}`)}
+                />
               </div>
             </div>
 
             <div className="donor_body_info">
               <div className="donor_body_info_item">
                 <label>{myFormLang.sidePhoto}: </label>
-                <img src={donor.photo_side} alt="" />
+                <img
+                  src={donor.photo_side}
+                  alt="side photo"
+                  className="img-round"
+                  onClick={() => openImage(`${donor.sidePhoto}`)}
+                />
               </div>
             </div>
           </div>

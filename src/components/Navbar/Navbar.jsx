@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import "./Navbar.css";
 import logo from "../../images/Logo (1).png";
+import logo2 from "../../images/Logo (4).png";
 import { useAuth } from "../../context/AuthContextProvider";
 import BurgerMenu from "./BurgerMenu/BurgerMenu";
 import { useLang } from "../../context/LangContextProvider";
 
 const Navbar = () => {
   const { getUser, logout, checkAuth, users, currentUser } = useAuth();
+  const location = useLocation();
   useEffect(() => {
     checkAuth();
   }, []);
@@ -74,30 +76,49 @@ const Navbar = () => {
     setActiveButtonId(id);
   };
 
+  const getNavbarStyles = () => {
+    if (location.pathname === "/contactus") {
+      return {
+        backgroundColor: "#0079a1",
+        color: "white",
+      };
+    }
+    return {};
+  };
+
+  const getLogoSource = () => {
+    return location.pathname === "/contactus" ? logo2 : logo;
+  };
+
   return (
     <div>
-      <div className="navbar_main_container">
+      <div className="navbar_main_container" style={getNavbarStyles()}>
         <div className="navbar_logo_container">
-          <img src={logo} alt="My_Air_Baby" />
+          <img src={getLogoSource()} alt="My_Air_Baby" />
         </div>
-        <div className="navbar_navigate_container">
+        <div className="navbar_navigate_container" style={getNavbarStyles()}>
           <ul>
             {navigateElements[lang].map((item) => (
               <li key={item.id}>
-                <Link to={item.link}>{item.name}</Link>
+                <Link activeClassName="act" to={item.link}>
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
         {currentUser ? (
-          <div className="navbar_authButton_container">
+          <div
+            className="navbar_authButton_container"
+            style={getNavbarStyles()}
+          >
             {profileElements[lang].map((item) => (
               <NavLink
                 to={item.link === "/log" ? "/login" : item.link}
                 key={item.id}
                 className="navbar_authButton_container_button"
-                activeclassname="active"
+                activeClassName="active"
                 onClick={item.link === "" ? logout : undefined}
               >
                 {item.name}
@@ -111,7 +132,7 @@ const Navbar = () => {
                 to={item.link}
                 key={item.id}
                 className="navbar_authButton_container_button"
-                activeClassName="active" // Заменил "activeclassname" на "activeClassName"
+                activeClassName="active"
               >
                 {item.name}
               </NavLink>
@@ -120,7 +141,6 @@ const Navbar = () => {
         )}
 
         <div className="burgerMenu">
-          {" "}
           <BurgerMenu
             navigateElements={navigateElements[lang]}
             authElements={

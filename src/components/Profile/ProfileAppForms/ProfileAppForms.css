@@ -32,7 +32,8 @@
   flex-wrap: wrap;
 }
 .donor_body_info_item img {
-  width: 25%;
+  width: 100px;
+  height: 100px;
 }
 @media all and (max-width: 1100px) {
   .donor_body_info_item label {
@@ -89,6 +90,10 @@
   .myForm_donor_body h3 {
     font-size: 18px;
   }
+  .donor_body_info_item img {
+    width: 70px;
+    height: 70px;
+  }
 }
 @media all and (max-width: 500px) {
   .donor_body_info_item label {
@@ -102,5 +107,9 @@
   }
   .myForm_donor_body h3 {
     font-size: 17px;
+  }
+  .donor_body_info_item img {
+    width: 50px;
+    height: 50px;
   }
 }
