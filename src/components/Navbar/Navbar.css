@@ -29,7 +29,7 @@
   align-items: center; /* Выравниваем элементы по вертикали по центру */
   justify-content: center; /* Выравниваем элементы по горизонтали по центру */
   text-align: center;
-  padding: 0 5px;
+  padding: 0 15px;
 }
 .navbar_navigate_container li:hover {
   background-color: white;

@@ -85,6 +85,28 @@ const Navbar = () => {
     }
     return {};
   };
+  const getNavLinkStyles = (link) => {
+    if (location.pathname === link) {
+      return {
+        backgroundColor: "rgba(0, 120.97, 161.29, 0.10)",
+        color: "#0079a1",
+        borderBottom: "10px solid #0079a1",
+      };
+    } else {
+      return {};
+    }
+  };
+  const getNavLinkStyles2 = (link) => {
+    if (location.pathname === link) {
+      return {
+        backgroundColor: "white",
+        color: "#0079a1",
+        borderBottom: "10px solid #7fcbe4",
+      };
+    } else {
+      return {};
+    }
+  };
 
   const getLogoSource = () => {
     return location.pathname === "/contactus" ? logo2 : logo;
@@ -93,16 +115,21 @@ const Navbar = () => {
   return (
     <div>
       <div className="navbar_main_container" style={getNavbarStyles()}>
-        <div className="navbar_logo_container">
+        <NavLink className="navbar_logo_container" to="/">
           <img src={getLogoSource()} alt="My_Air_Baby" />
-        </div>
+        </NavLink>
         <div className="navbar_navigate_container" style={getNavbarStyles()}>
           <ul>
             {navigateElements[lang].map((item) => (
-              <li key={item.id}>
-                <Link activeClassName="act" to={item.link}>
-                  {item.name}
-                </Link>
+              <li
+                style={
+                  item.link === "/contactus"
+                    ? getNavLinkStyles2(item.link)
+                    : getNavLinkStyles(item.link)
+                }
+                key={item.id}
+              >
+                <Link to={item.link}>{item.name}</Link>
               </li>
             ))}
           </ul>
@@ -133,6 +160,7 @@ const Navbar = () => {
                 key={item.id}
                 className="navbar_authButton_container_button"
                 activeClassName="active"
+                style={getNavbarStyles()}
               >
                 {item.name}
               </NavLink>

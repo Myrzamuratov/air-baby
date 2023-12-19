@@ -30,13 +30,7 @@ const BurgerMenu = ({ navigateElements, authElements }) => {
       {openBurgerMenu ? (
         <div className="burger_main">
           <div onClick={closeBurgerMenu} className="burgermenu_icon_close">
-            {lang === "en" ? (
-              <h3>Menu</h3>
-            ) : lang === "ru" ? (
-              <h3>Меню</h3>
-            ) : (
-              <h3>菜单</h3>
-            )}
+            <CloseIcon />
           </div>
           <ul className="navigateContainer">
             {navigateElements.map((item) => (

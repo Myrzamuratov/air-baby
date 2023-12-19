@@ -222,7 +222,7 @@ export default function DonorList({ donor }) {
                   src={donor.photo_fas}
                   alt="face"
                   className="img-round"
-                  onClick={() => openImage(`${donor.facePhoto}`)}
+                  onClick={() => openImage(`${donor.photo_fas}`)}
                 />
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function DonorList({ donor }) {
                   src={donor.photo_side}
                   alt="side photo"
                   className="img-round"
-                  onClick={() => openImage(`${donor.sidePhoto}`)}
+                  onClick={() => openImage(`${donor.photo_side}`)}
                 />
               </div>
             </div>
