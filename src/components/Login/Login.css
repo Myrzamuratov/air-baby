@@ -1,9 +1,8 @@
 .mainBackground {
   background-image: url("../../images/Background.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-size: auto;
   width: 100%;
+  background-size: 100% 100%;
   height: 852px; /* Высота 100vh для заполнения всей видимой области */
   overflow: hidden; /* Отключить вертикальную прокрутку */
   position: relative;
@@ -177,7 +176,8 @@
     padding: 8px;
   }
   .mainBackground {
-    height: 400px;
+    height: 100%;
+    background-size: cover; /* Добавлено для отображения фона без растягивания */
   }
 }
 @media screen and (max-width: 400px) {

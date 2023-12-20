@@ -28,8 +28,6 @@ const Register = () => {
     "Password cannot be empty."
   );
 
-  const [checkbox, setCheckbox] = useState(false);
-  const [checkCheckbox, setCheckCheckbox] = useState(true);
   const [formValid, setFormValid] = useState(false);
 
   useEffect(() => {
@@ -86,10 +84,6 @@ const Register = () => {
   const form = { email: email, password: password };
 
   function handleSave() {
-    if (!checkbox) {
-      setCheckCheckbox(false);
-      return;
-    }
     if (!email.trim() || !password.trim() || !password2.trim()) {
       alert("Fill in the fields");
     }
@@ -140,16 +134,7 @@ const Register = () => {
               type="password"
               placeholder={authElement.rePassword}
             />
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                id="ch1"
-                onClick={() => setCheckbox(true)}
-              />
-              <label className={checkCheckbox ? null : "errCheckbox"}>
-                {authElement.privacyPolicy}
-              </label>
-            </div>
+
             <Button disabled={!formValid} onClick={handleSave}>
               {authElement.signUp}
             </Button>

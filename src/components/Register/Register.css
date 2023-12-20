@@ -177,7 +177,8 @@
     padding: 8px;
   }
   .mainBackground {
-    height: 400px;
+    height: 100vh;
+    background-size: cover;
   }
 }
 @media all and (max-width: 400px) {
