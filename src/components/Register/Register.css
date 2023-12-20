@@ -177,7 +177,7 @@
     padding: 8px;
   }
   .mainBackground {
-    height: 100vh;
+    height: 80vh;
     background-size: cover;
   }
 }
