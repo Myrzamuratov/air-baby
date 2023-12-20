@@ -43,6 +43,7 @@ const Form = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [comment, setComment] = useState("");
   const [email, setEmail] = useState("");
+  const [tunduk, setTunduk] = useState("");
   const { createDonnorApplication, loading } = useForm();
 
   function handleSave() {
@@ -281,7 +282,7 @@ const Form = () => {
               onChange={(e) => setAddress(e.target.value)}
             />
           </div>
-          <div className="inputDiv" id="checkboxDiv">
+          <div className="inputDiv" id="checkboxInput">
             <label style={{ textAlign: "start" }}>
               {translationsEgg.maritalStatus}
             </label>
@@ -346,7 +347,7 @@ const Form = () => {
               }
             />
           </div>
-          <div className="inputDiv" id="checkboxDiv">
+          <div className="inputDiv" id="checkboxInput">
             <label style={{ textAlign: "start" }}>
               {translationsEgg.experienceOfDonation}
             </label>
@@ -375,7 +376,7 @@ const Form = () => {
               label={lang === "en" ? "No" : lang === "ru" ? "Нет" : "没有"}
             />
           </div>
-          <div className="inputDiv" id="checkboxDiv">
+          <div className="inputDiv" id="checkboxInput">
             <label style={{ textAlign: "start" }}>
               {translationsEgg.willingnessToTravel}
             </label>
@@ -398,6 +399,36 @@ const Form = () => {
                   id="checkbox"
                   checked={travel === "no"}
                   onClick={() => setTravel("no")}
+                  name="No"
+                />
+              }
+              label={lang === "en" ? "No" : lang === "ru" ? "Нет" : "没有"}
+            />
+          </div>
+
+          <div className="inputDiv" id="checkboxInput">
+            <label style={{ textAlign: "start" }}>
+              {translationsEgg.tunduk}
+            </label>
+            <FormControlLabel
+              style={{ display: "flex", justifyContent: "start" }}
+              control={
+                <Checkbox
+                  id="checkbox"
+                  checked={tunduk === "yes"}
+                  onClick={() => setTunduk("yes")}
+                  name="Yes"
+                />
+              }
+              label={lang === "en" ? "Yes" : lang === "ru" ? "Да" : "是"}
+            />
+            <FormControlLabel
+              style={{ display: "flex", justifyContent: "start" }}
+              control={
+                <Checkbox
+                  id="checkbox"
+                  checked={tunduk === "no"}
+                  onClick={() => setTunduk("no")}
                   name="No"
                 />
               }

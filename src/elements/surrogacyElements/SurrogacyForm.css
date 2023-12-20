@@ -1,5 +1,5 @@
 .surrogacyMainDiv {
-  padding: 50px;
+  padding: 10px 50px;
 }
 .surrogacyFormHeader {
   font-size: 40px;
@@ -9,8 +9,11 @@
 .surrogacyFormBordy {
   display: flex;
   justify-content: space-around;
-  margin: 25px;
+  margin: 10px;
   flex-wrap: wrap;
+}
+.inputDiv span {
+  font-size: 15px;
 }
 .inputDiv {
   display: flex;
@@ -39,8 +42,7 @@
   width: 47.5%;
 }
 #checkboxInput {
-  width: 5px;
-  height: 5px;
+  width: 30%;
 }
 .children {
   display: flex;
@@ -145,6 +147,12 @@
     display: flex;
     justify-content: center;
   }
+  .inputDiv span {
+    font-size: 12px;
+  }
+  #checkboxInput {
+    width: 45%;
+  }
 }
 @media all and (max-width: 500px) {
   .inputDiv input {
@@ -158,6 +166,12 @@
   .surrogacy_button {
     font-size: 15px;
   }
+  .inputDiv span {
+    font-size: 10px;
+  }
+  #checkboxInput {
+    width: 40%;
+  }
 }
 @media all and (max-width: 400px) {
   .surrogacyMainDiv {
@@ -168,5 +182,8 @@
   }
   .inputDiv label {
     font-size: 13px;
+  }
+  #checkboxInput {
+    width: 80%;
   }
 }

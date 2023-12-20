@@ -249,6 +249,12 @@ export default function ProfileAppForms({ donorAppID }) {
                   <p>{myDonorApp.comment}</p>
                 </div>
               </div>
+              <div className="donor_body_info">
+                <div className="donor_body_info_item">
+                  <label>{myFormLang.tunduk}: </label>
+                  <p>{myDonorApp.tunduk_account}</p>
+                </div>
+              </div>
             </div>
           ) : (
             <p>Loading...</p>

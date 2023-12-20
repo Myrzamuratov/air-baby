@@ -23,10 +23,11 @@ const LangContextProvider = ({ children }) => {
   };
   const translationEgg = {
     en: {
+      tunduk: "Having an account in the Tunduk app",
       donationForm: "Donation form",
       photo: "Your photo",
       example: "Example",
-      motherForm: "Mother form",
+      motherForm: "Surrogate Mother Candidate Form",
       firstName: "First name",
       lastName: "Last name",
       dateOfBirth: "Date of birth",
@@ -157,11 +158,12 @@ const LangContextProvider = ({ children }) => {
       saveButton: "Save",
     },
     ru: {
+      tunduk: "Наличие аккаунта в приложении Тундук",
       donationForm: "Донорская форма",
       photo: "Ваше фото",
       example: "Пример",
       abortionQuanity: "Количество абортов",
-      motherForm: "Форма для матери",
+      motherForm: "Форма для кандидатки суррогатной матери",
       firstName: "Имя",
       lastName: "Фамилия",
       dateOfBirth: "Дата рождения",
@@ -300,11 +302,12 @@ const LangContextProvider = ({ children }) => {
       saveButton: "Сохранить",
     },
     ch: {
+      tunduk: "拥有 Tunduk 应用程序账户",
       donationForm: "捐赠表格",
       photo: "您的照片",
       example: "示例",
       whatStage: "您在哪个阶段分娩？",
-      motherForm: "母亲表格",
+      motherForm: "代孕母亲候选人表格",
       firstName: "名字",
       lastName: "姓",
       abortionQuanity: "堕胎数量",
@@ -451,7 +454,7 @@ const LangContextProvider = ({ children }) => {
       email: "Email",
       subject: "Subject",
       message: "Message",
-      emergency: "Emergency",
+      emergency: "Contacts",
       location: "Location",
       workingHours: "Working hours",
       submit: "Submit",
@@ -467,7 +470,7 @@ const LangContextProvider = ({ children }) => {
       email: "Электронная почта",
       subject: "Тема",
       message: "Сообщение",
-      emergency: "Экстренная ситуация",
+      emergency: "Контакты",
       location: "Расположение",
       workingHours: "Рабочее время",
       submit: "Отправить",
@@ -483,7 +486,7 @@ const LangContextProvider = ({ children }) => {
       email: "电子邮件",
       subject: "主题",
       message: "留言",
-      emergency: "紧急情况",
+      emergency: "联系方式",
       location: "地点",
       workingHours: "工作时间",
       submit: "发送",
@@ -595,6 +598,7 @@ const LangContextProvider = ({ children }) => {
 
   const myFormLang = {
     en: {
+      tunduk: "Having an account in the Tunduk app",
       yoDonorAppForm: "Your Donor Application form",
       youSurrogacyApp: "Your Surrogacy Application form",
       physicalCharacteristics: "Physical Characteristics",
@@ -665,6 +669,7 @@ const LangContextProvider = ({ children }) => {
       sidePhoto: "Photo of the the side",
     },
     ru: {
+      tunduk: "Наличие аккаунта в приложении Тундук",
       yoDonorAppForm: "Ваша анкета донора",
       youSurrogacyApp: "Ваша анкета на суррогатное материнство",
       physicalCharacteristics: "Физическая характеристика",
@@ -734,6 +739,7 @@ const LangContextProvider = ({ children }) => {
       sidePhoto: "Фотография сбоку",
     },
     ch: {
+      tunduk: "拥有 Tunduk 应用程序账户",
       yoDonorAppForm: "捐赠者申请表",
       youSurrogacyApp: "您的代孕申请表",
       physicalCharacteristics: "物理特征",

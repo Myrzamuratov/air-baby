@@ -310,7 +310,12 @@ export default function SurrogacuAppForms({ donorAppID }) {
                   <p>{mySurrogacyApp.manager_name}</p>
                 </div>
               </div>
-
+              <div className="donor_body_info">
+                <div className="donor_body_info_item">
+                  <label>{myFormLang.tunduk}: </label>
+                  <p>{mySurrogacyApp.tunduk_account}</p>
+                </div>
+              </div>
               <div className="donor_body_info">
                 <div className="donor_body_info_item" id="image_div">
                   <label>{myFormLang.passportPhoto}: </label>

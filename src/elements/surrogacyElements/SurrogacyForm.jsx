@@ -51,6 +51,8 @@ const SurrogacyForm = () => {
   const [fullbodySelfie, setFullbodySelfie] = useState();
   const [passportPhoto, setPassportPhoto] = useState();
   const [managerName, setManagerName] = useState("");
+  const [email, setEmail] = useState("");
+  const [tunduk, setTunduk] = useState("");
   const { createSurrogacyApplication, loading } = useForm();
 
   const createChildrenArray = (count) => {
@@ -203,7 +205,8 @@ const SurrogacyForm = () => {
     formData.append("full_body_selfie", fullbodySelfie);
     formData.append("passport_photo", passportPhoto);
     formData.append("manager_name", managerName);
-    console.log(formData);
+    formData.append("tunduk_account", tunduk);
+    formData.append("email", email);
     createSurrogacyApplication(formData);
   }
 
@@ -348,7 +351,7 @@ const SurrogacyForm = () => {
               placeholder="Type"
             />
           </div>
-          <div className="inputDiv">
+          <div className="inputDiv" id="bigInput">
             <label>{translationsEgg.bloodPresure}</label>
             <input
               type="text"
@@ -360,7 +363,6 @@ const SurrogacyForm = () => {
         </div>
       </div>
       <div className="surrogacyForm">
-        <h3 className="surrogacyFormHeader">{translationsEgg.children}</h3>
         <div className="surrogacyFormBordy">
           <div className="inputDiv" id="bigInput">
             <label>{translationsEgg.howMany}</label>
@@ -544,7 +546,7 @@ const SurrogacyForm = () => {
               <option value="no">{translationsEgg.no}</option>
             </select>
           </div>
-          <div className="inputDiv">
+          <div className="inputDiv" id="checkboxInput">
             <label style={{ textAlign: "center" }}>
               {translationsEgg.doYouSmoke}
             </label>
@@ -573,7 +575,7 @@ const SurrogacyForm = () => {
               label={translationsEgg.no}
             />
           </div>
-          <div className="inputDiv">
+          <div className="inputDiv" id="checkboxInput">
             <label style={{ textAlign: "center" }}>
               {translationsEgg.doYouDrink}
             </label>
@@ -596,6 +598,35 @@ const SurrogacyForm = () => {
                   id="checkbox"
                   checked={alcohol === "no"}
                   onClick={() => setAlcohol("no")}
+                  name="no"
+                />
+              }
+              label={translationsEgg.no}
+            />
+          </div>
+          <div className="inputDiv" id="checkboxInput">
+            <label style={{ textAlign: "center" }}>
+              {translationsEgg.tunduk}
+            </label>
+            <FormControlLabel
+              style={{ display: "flex", justifyContent: "center" }}
+              control={
+                <Checkbox
+                  id="checkbox"
+                  checked={tunduk === "yes"}
+                  onClick={() => setTunduk("yes")}
+                  name="yes"
+                />
+              }
+              label={translationsEgg.yes}
+            />
+            <FormControlLabel
+              style={{ display: "flex", justifyContent: "center" }}
+              control={
+                <Checkbox
+                  id="checkbox"
+                  checked={tunduk === "no"}
+                  onClick={() => setTunduk("no")}
                   name="no"
                 />
               }
@@ -700,14 +731,6 @@ const SurrogacyForm = () => {
             </div>
           </div>
 
-          <div className="inputDiv" id="bigInput">
-            <label>{translationsEgg.phoneNumberWhatsApp}</label>
-            <input
-              type="text"
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              placeholder="Type"
-            />
-          </div>
           <div className="image_input_div" id="bigInput">
             <label>{translationsEgg.facePhoto}</label>
             <div className="image_input">
@@ -725,14 +748,6 @@ const SurrogacyForm = () => {
                 <div className="image_div">{translationsEgg.photo}</div>
               )}
             </div>
-          </div>
-          <div className="inputDiv">
-            <label>{translationsEgg.managerName}</label>
-            <input
-              type="text"
-              onChange={(e) => setManagerName(e.target.value)}
-              placeholder="Type"
-            />
           </div>
 
           <div className="image_input_div" id="bigInput">
@@ -753,7 +768,31 @@ const SurrogacyForm = () => {
               )}
             </div>
           </div>
+          <div className="inputDiv" id="bigInput">
+            <label>{translationsEgg.managerName}</label>
+            <input
+              type="text"
+              onChange={(e) => setManagerName(e.target.value)}
+              placeholder="Type"
+            />
+          </div>
+          <div className="inputDiv" id="bigInput">
+            <label>{translationsEgg.phoneNumberWhatsApp}</label>
+            <input
+              type="text"
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              placeholder="Type"
+            />
+          </div>
 
+          <div className="inputDiv" id="bigInput">
+            <label>{translationsEgg.email}</label>
+            <input
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Type"
+            />
+          </div>
           <div className="inputDiv"></div>
         </div>
         <div className="button_div">
