@@ -5,12 +5,18 @@ import WhoCanEggDonor from "../../elements/homeElements/WhoCanEggDonor/WhoCanEgg
 import HowToBeEggDonor from "../../elements/homeElements/HowToBeEggDonor/HowToBeEggDonor";
 import EggDonorStat from "../../elements/homeElements/EggDonorStat/EggDonorStat";
 import CarouselElement from "../../elements/CarouselElement/CarouselElement";
+import HomeSurrogacy from "../../elements/homeElements/HomeSurrogacy/HomeSurrogacy";
+import WhoCanSurrogacy from "../../elements/homeElements/WhoCanSurrogacy/WhoCanSurrogacy";
+import HowToBeSurrogacy from "../../elements/homeElements/howToBeSurrogacy/HowToBeSurrogacy";
 
 const Home = () => {
   return (
     <div>
-      <HomeEggDonation />
+      <HomeSurrogacy />
       <Advantages />
+      <WhoCanSurrogacy />
+      <HowToBeSurrogacy />
+      <HomeEggDonation />
       <WhoCanEggDonor />
       <HowToBeEggDonor />
       <EggDonorStat />

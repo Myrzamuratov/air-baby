@@ -61,7 +61,8 @@ const SurrogacyForm = () => {
       newChildrenArray.push({
         child_name: "",
         date_of_birth: 0,
-        what_stage_was_birth: 9,
+        what_stage_was_birth: 0,
+        how_born: "",
       });
     }
     setChildren(newChildrenArray);
@@ -71,6 +72,7 @@ const SurrogacyForm = () => {
     const updatedChildrenArray = [...children];
     updatedChildrenArray[index][property] = value;
     setChildren(updatedChildrenArray);
+    console.log(children);
   };
   const [facePhotoPreview, setFacePhotoPreview] = useState(null);
   const [passportPhotoPreview, setPassportPhotoPreview] = useState(null);
@@ -388,7 +390,7 @@ const SurrogacyForm = () => {
               <div className="inputDiv">
                 <label>{translationsEgg.dateOfBirth}</label>
                 <input
-                  type="text"
+                  type="data"
                   value={child.date_of_birth}
                   onChange={(e) =>
                     handleInputChange(index, "date_of_birth", e.target.value)
@@ -409,6 +411,23 @@ const SurrogacyForm = () => {
                   }
                   placeholder="Type"
                 />
+              </div>
+              <div className="inputDiv">
+                <label>{translationsEgg.delivery}</label>
+                <select
+                  value={breastfeeding}
+                  onChange={(e) =>
+                    handleInputChange(index, "how_born", e.target.value)
+                  }
+                >
+                  <option value="">Type</option>
+                  <option value={translationsEgg.cesarean}>
+                    {translationsEgg.cesarean}
+                  </option>
+                  <option value={translationsEgg.natural}>
+                    {translationsEgg.natural}
+                  </option>
+                </select>
               </div>
             </div>
           ))}

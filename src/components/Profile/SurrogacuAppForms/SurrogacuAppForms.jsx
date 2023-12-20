@@ -61,7 +61,7 @@ export default function SurrogacuAppForms({ donorAppID }) {
     window.open(imageUrl, "_blank");
   };
 
-  const { myFormLang } = useLang();
+  const { myFormLang, translationEgg } = useLang();
   return (
     <Accordion
       expanded={expanded === "panel1"}
@@ -179,6 +179,10 @@ export default function SurrogacuAppForms({ donorAppID }) {
                   <div className="donor_body_info_item">
                     <label>{myFormLang.whatStage}: </label>
                     <p>{item.what_stage_was_birth}</p>
+                  </div>
+                  <div className="donor_body_info_item">
+                    <label>{myFormLang.delivery}: </label>
+                    <p>{item.how_born}</p>
                   </div>
                   <br />
                 </div>

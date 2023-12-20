@@ -12,13 +12,13 @@ const Advantages = () => {
       {
         id: 1,
         name: "Free Examination",
-        text: "We guarantee a full range of examinations required for donation at our expense.",
+        text: "We guarantee the conduct of a comprehensive examination at our expense.",
         img: group1,
       },
       {
         id: 2,
         name: "Legal support",
-        text: "All legal aspects of egg donation are regulated by the legislation of Georgia.",
+        text: "All legal aspects of egg donation are regulated by the legislation of Kyrgyzstan and Georgia.",
         img: group2,
       },
       {
@@ -38,13 +38,13 @@ const Advantages = () => {
       {
         id: 1,
         name: "Бесплатное обследование",
-        text: "Мы гарантируем проведение полного комплекса обследований, необходимых для оформления дарственной, за наш счет.",
+        text: "Мы гарантируем проведение полного комплекса обследований за наш счет.",
         img: group1,
       },
       {
         id: 2,
         name: "Юридическая поддержка",
-        text: "Все правовые аспекты донорства яйцеклеток регулируются законодательством Грузии.",
+        text: "Все правовые аспекты донорства яйцеклеток регулируются законодательством КР и Грузии.",
         img: group2,
       },
       {
@@ -64,13 +64,13 @@ const Advantages = () => {
       {
         id: 1,
         name: "免费考试",
-        text: "我们保证进行赠与契约所需的全面调查，费用由我们承担。",
+        text: "我们保证进行全面的检查，费用由我们承担。",
         img: group1,
       },
       {
         id: 2,
         name: "法律支持",
-        text: "捐赠卵子的所有法律方面均受格鲁吉亚法律管辖。",
+        text: "卵子捐赠的所有法律方面都受到吉尔吉斯斯坦和格鲁吉亚的法律规定。",
         img: group2,
       },
       {

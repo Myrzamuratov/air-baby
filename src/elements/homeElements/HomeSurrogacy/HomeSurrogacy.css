@@ -1,5 +1,5 @@
-.mainDiv_home {
-  background-image: url("../../../images/HomePageImages/Background\ \(1\).png");
+.mainDiv_home1 {
+  background-image: url("../../../images/pregnant-woman-with-ultrasound-photo-putting-headphones-with-music-her-belly\ 1.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -53,18 +53,18 @@
   .vectorDiv {
     display: none;
   }
-  .mainDiv_home {
+  .mainDiv_home1 {
     height: 700px;
   }
 }
 @media all and (max-width: 1100px) {
-  .mainDiv_home {
+  .mainDiv_home1 {
     height: 600px;
   }
 }
 
 @media all and (max-width: 1000px) {
-  .mainDiv_home {
+  .mainDiv_home1 {
     height: 600px;
   }
   .contentDiv_text {
@@ -83,12 +83,12 @@
   }
 }
 @media all and (max-width: 900px) {
-  .mainDiv_home {
+  .mainDiv_home1 {
     height: 500px;
   }
 }
 @media all and (max-width: 801px) {
-  .mainDiv_home {
+  .mainDiv_home1 {
     height: 400px;
   }
   .contentDiv {
@@ -106,7 +106,7 @@
   }
 }
 @media all and (max-width: 701px) {
-  .mainDiv_home {
+  .mainDiv_home1 {
     height: 300px;
   }
   .contentDiv_text h1 {
@@ -130,7 +130,7 @@
   }
 }
 @media all and (max-width: 500px) {
-  .mainDiv_home {
+  .mainDiv_home1 {
     height: 300px;
   }
   .contentDiv {
@@ -160,7 +160,7 @@
   }
 }
 @media all and (max-width: 400px) {
-  .mainDiv_home {
+  .mainDiv_home1 {
     height: 250px;
     display: flex;
     justify-content: center;
