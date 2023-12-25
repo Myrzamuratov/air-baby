@@ -47,30 +47,7 @@ const Form = () => {
   const { createDonnorApplication, loading } = useForm();
 
   function handleSave() {
-    if (
-      !firstName.trim() ||
-      !lastName.trim() ||
-      !age ||
-      !birthDate.trim() ||
-      !dateOfMenstrualCycle.trim() ||
-      !nationality.trim() ||
-      !countryOfResidence.trim() ||
-      !education.trim() ||
-      !currentJob.trim() ||
-      !martialStatus.trim() ||
-      !donationExp.trim() ||
-      !travel.trim() ||
-      !bloodType.trim() ||
-      !motherHair.trim() ||
-      !fatherHair.trim() ||
-      !motherEye.trim() ||
-      !fatherEye.trim() ||
-      !hobby.trim() ||
-      !personalityType.trim() ||
-      !healthStatus.trim() ||
-      !phoneNumber.trim() ||
-      !comment.trim()
-    ) {
+    if (!firstName.trim()) {
       alert("Fill in the fields");
       return;
     }
@@ -106,6 +83,7 @@ const Form = () => {
     formData.append("photo_fas", facePhoto);
     formData.append("photo_full", fullBodyPhoto);
     formData.append("photo_side", sidePhoto);
+    formData.append("tunduk_account", tunduk);
     createDonnorApplication(formData);
   }
 
