@@ -161,9 +161,7 @@ const Form = () => {
         break;
     }
   };
-  useEffect(() => {
-    console.log(education);
-  }, [education]);
+
   const { lang, translationsEgg } = useLang();
   return (
     <div className="eggDonationMainDiv">

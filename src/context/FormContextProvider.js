@@ -30,11 +30,9 @@ const FormContextProvider = ({ children }) => {
         formData,
         getTokens()
       );
-      console.log("success");
       setModalSuccess("Surrogacy application created successfully!");
       openModalSuccess();
     } catch (error) {
-      console.log(error);
       setModalError(
         `Failed to create surrogacy application. ${getErrorMessage(error)}`
       );
@@ -52,11 +50,9 @@ const FormContextProvider = ({ children }) => {
         formData,
         getTokens()
       );
-      console.log(res);
       setModalSuccess("Donor application created successfully!");
       openModalSuccess();
     } catch (error) {
-      console.log(error);
       setModalError(
         `Failed to create donor application. ${getErrorMessage(error)}`
       );
@@ -74,7 +70,6 @@ const FormContextProvider = ({ children }) => {
         return res.data;
       });
     } catch (error) {
-      console.log(error);
       setModalError(
         `Failed to create donor application. ${getErrorMessage(error)}`
       );
@@ -97,7 +92,6 @@ const FormContextProvider = ({ children }) => {
         setSurrogacyApp(null);
       }
     } catch (error) {
-      console.log(error);
       setModalError(
         `Failed to create surrogacy application. ${getErrorMessage(error)}`
       );
@@ -109,10 +103,8 @@ const FormContextProvider = ({ children }) => {
   async function donorListForAlowwed() {
     try {
       const res = await axios.get(`${API}donor/list-for-allowed/`, getTokens());
-      console.log(res.data);
       setDonorList(res.data);
     } catch (error) {
-      console.log(error);
       setModalError(
         `Failed to create surrogacy application. ${getErrorMessage(error)}`
       );

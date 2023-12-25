@@ -72,7 +72,6 @@ const SurrogacyForm = () => {
     const updatedChildrenArray = [...children];
     updatedChildrenArray[index][property] = value;
     setChildren(updatedChildrenArray);
-    console.log(children);
   };
   const [facePhotoPreview, setFacePhotoPreview] = useState(null);
   const [passportPhotoPreview, setPassportPhotoPreview] = useState(null);
@@ -415,7 +414,7 @@ const SurrogacyForm = () => {
               <div className="inputDiv">
                 <label>{translationsEgg.delivery}</label>
                 <select
-                  value={breastfeeding}
+                  value={child.how_born}
                   onChange={(e) =>
                     handleInputChange(index, "how_born", e.target.value)
                   }

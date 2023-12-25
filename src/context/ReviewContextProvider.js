@@ -20,17 +20,13 @@ const ReviewContextProvider = ({ children }) => {
     try {
       await axios.post(`${API}review/create-review/`, formData, getTokens());
       getReviews();
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
   async function deleteReview(id) {
     try {
       await axios.delete(`${API}review/delete-review/${id}/`, getTokens());
       getReviews();
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
   async function updateReview(id, formData) {
     try {
@@ -40,9 +36,7 @@ const ReviewContextProvider = ({ children }) => {
         getTokens()
       );
       getReviews();
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
   const values = { getReviews, reviews, addReview, deleteReview, updateReview };
 

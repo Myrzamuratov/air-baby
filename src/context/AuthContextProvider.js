@@ -95,7 +95,6 @@ const AuthContextProvider = ({ children }) => {
         const userDataObject = allUserData[0];
         dispatch({ type: "GET_USER", payload: userDataObject });
         setUserData(userDataObject);
-        console.log(userDataObject);
       }
     } catch (error) {
       const errorMessage = getErrorMessage(error);
