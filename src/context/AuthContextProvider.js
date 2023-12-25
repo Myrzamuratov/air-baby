@@ -108,7 +108,6 @@ const AuthContextProvider = ({ children }) => {
     localStorage.removeItem("tokens");
     localStorage.removeItem("email");
     setCurrentUser("");
-    navigate("/login");
   }
 
   async function checkAuth() {
