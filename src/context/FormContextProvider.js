@@ -2,6 +2,7 @@ import axios from "axios";
 import { API, getTokens } from "../helpers/const";
 import React, { createContext, useContext, useState } from "react";
 import Modal from "react-modal"; // Import the modal library
+import { useAuth } from "./AuthContextProvider";
 
 export const FormContext = createContext();
 export const useForm = () => useContext(FormContext);
@@ -11,19 +12,37 @@ const FormContextProvider = ({ children }) => {
   const [modalError, setModalError] = React.useState("");
   const [modalSuccess, setModalSuccess] = React.useState("");
   const [loading, setLoading] = useState(false);
+  const { currentUser } = useAuth();
 
   const getErrorMessage = (error) => {
-    if (error.response && error.response.data && error.response.data.detail) {
-      return error.response.data.detail;
-    } else if (error.message) {
-      return error.message;
-    } else {
-      return "An error occurred.";
+    if (error) {
+      if (typeof error === "string") {
+        return error;
+      } else if (typeof error === "object") {
+        let errorMessage = "An error occurred.";
+
+        // Проход по всем ключам объекта и добавление их значений к errorMessage
+        for (const key in error) {
+          if (error.hasOwnProperty(key)) {
+            errorMessage += `\n${key}: ${error[key]}`;
+          }
+        }
+
+        return errorMessage;
+      }
     }
+
+    return "An error occurred.";
   };
 
   async function createSurrogacyApplication(formData) {
     setLoading(true);
+    if (!currentUser) {
+      setModalError("Unauthorized");
+      openModalError();
+      setLoading(false);
+      return;
+    }
     try {
       await axios.post(
         `${API}surrogacy/create-application/`,
@@ -34,7 +53,9 @@ const FormContextProvider = ({ children }) => {
       openModalSuccess();
     } catch (error) {
       setModalError(
-        `Failed to create surrogacy application. ${getErrorMessage(error)}`
+        `Failed to create surrogacy application. ${getErrorMessage(
+          error.response.data
+        )}`
       );
       openModalError();
     } finally {
@@ -44,6 +65,12 @@ const FormContextProvider = ({ children }) => {
 
   async function createDonnorApplication(formData) {
     setLoading(true);
+    if (!currentUser) {
+      setModalError("Unauthorized");
+      openModalError();
+      setLoading(false);
+      return;
+    }
     try {
       const res = await axios.post(
         `${API}donor/create/`,
@@ -54,8 +81,11 @@ const FormContextProvider = ({ children }) => {
       openModalSuccess();
     } catch (error) {
       setModalError(
-        `Failed to create donor application. ${getErrorMessage(error)}`
+        `Failed to create donor application. ${getErrorMessage(
+          error.response.data
+        )}`
       );
+      console.log(error);
       openModalError();
     } finally {
       setLoading(false);
@@ -71,7 +101,9 @@ const FormContextProvider = ({ children }) => {
       });
     } catch (error) {
       setModalError(
-        `Failed to create donor application. ${getErrorMessage(error)}`
+        `Failed to create donor application. ${getErrorMessage(
+          error.response.data
+        )}`
       );
     }
   }
@@ -93,7 +125,9 @@ const FormContextProvider = ({ children }) => {
       }
     } catch (error) {
       setModalError(
-        `Failed to create surrogacy application. ${getErrorMessage(error)}`
+        `Failed to create surrogacy application. ${getErrorMessage(
+          error.response.data
+        )}`
       );
     }
   }
@@ -106,7 +140,9 @@ const FormContextProvider = ({ children }) => {
       setDonorList(res.data);
     } catch (error) {
       setModalError(
-        `Failed to create surrogacy application. ${getErrorMessage(error)}`
+        `Failed to create surrogacy application. ${getErrorMessage(
+          error.response.data
+        )}`
       );
     }
   }

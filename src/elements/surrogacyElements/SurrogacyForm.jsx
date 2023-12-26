@@ -811,7 +811,6 @@ const SurrogacyForm = () => {
               placeholder="Type"
             />
           </div>
-          <div className="inputDiv"></div>
         </div>
         <div className="button_div">
           {loading ? (

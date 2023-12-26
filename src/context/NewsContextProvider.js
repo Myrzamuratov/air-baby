@@ -19,8 +19,8 @@ const NewsContextProvider = ({ children }) => {
   const [modalError, setModalError] = useState("");
 
   const getErrorMessage = (error) => {
-    if (error.response && error.response.data && error.response.data.detail) {
-      return error.response.data.detail;
+    if (error) {
+      return error.detail;
     } else if (error.message) {
       return error.message;
     } else {
@@ -34,7 +34,9 @@ const NewsContextProvider = ({ children }) => {
       setNews(response.data.results.reverse());
       setPagination(response.data);
     } catch (error) {
-      setModalError(`Failed to fetch news. ${getErrorMessage(error)}`);
+      setModalError(
+        `Failed to fetch news. ${getErrorMessage(error.response.data)}`
+      );
       openModal();
     }
   }
@@ -45,7 +47,9 @@ const NewsContextProvider = ({ children }) => {
       getNews();
       getUserReview(id);
     } catch (error) {
-      setModalError(`Failed to add rating. ${getErrorMessage(error)}`);
+      setModalError(
+        `Failed to add rating. ${getErrorMessage(error.response.data)}`
+      );
       openModal();
     }
   }
@@ -58,7 +62,9 @@ const NewsContextProvider = ({ children }) => {
       getComments(id);
       getUserReview(id);
     } catch (error) {
-      setModalError(`Failed to fetch news details. ${getErrorMessage(error)}`);
+      setModalError(
+        `Failed to fetch news details. ${getErrorMessage(error.response.data)}`
+      );
       openModal();
     }
   }
@@ -71,7 +77,9 @@ const NewsContextProvider = ({ children }) => {
       );
       setComments(response.data);
     } catch (error) {
-      setModalError(`Failed to fetch comments. ${getErrorMessage(error)}`);
+      setModalError(
+        `Failed to fetch comments. ${getErrorMessage(error.response.data)}`
+      );
       openModal();
     }
   }
@@ -81,7 +89,9 @@ const NewsContextProvider = ({ children }) => {
       await axios.post(`${API}news/${id}/add_comment/`, formData, getTokens());
       getComments(id);
     } catch (error) {
-      setModalError(`Failed to add comment. ${getErrorMessage(error)}`);
+      setModalError(
+        `Failed to add comment. ${getErrorMessage(error.response.data)}`
+      );
       openModal();
     }
   }
@@ -91,7 +101,9 @@ const NewsContextProvider = ({ children }) => {
       const response = await axios.get(`${API}news/${id}/reviewers`);
       setReviewers(response.data);
     } catch (error) {
-      setModalError(`Failed to fetch user reviews. ${getErrorMessage(error)}`);
+      setModalError(
+        `Failed to fetch user reviews. ${getErrorMessage(error.response.data)}`
+      );
       openModal();
     }
   }

@@ -46,13 +46,24 @@ const AuthContextProvider = ({ children }) => {
   const [userData, setUserData] = useState();
 
   const getErrorMessage = (error) => {
-    if (error.response && error.response.data && error.response.data.detail) {
-      return error.response.data;
-    } else if (error.message) {
-      return error.message;
-    } else {
-      return "An error occurred.";
+    if (error) {
+      if (typeof error === "string") {
+        return error;
+      } else if (typeof error === "object") {
+        let errorMessage = "An error occurred.";
+
+        // Проход по всем ключам объекта и добавление их значений к errorMessage
+        for (const key in error) {
+          if (error.hasOwnProperty(key)) {
+            errorMessage += `\n${key}: ${error[key]}`;
+          }
+        }
+
+        return errorMessage;
+      }
     }
+
+    return "An error occurred.";
   };
 
   async function handleRegister(formData, email) {
@@ -61,8 +72,9 @@ const AuthContextProvider = ({ children }) => {
       await axios.post(`${API}account/register/`, formData);
       handleLogin(formData, email);
     } catch (error) {
-      const errorMessage = getErrorMessage(error);
+      const errorMessage = getErrorMessage(error.response.data);
       setModalError(`Registration failed. ${errorMessage}`);
+      console.log(error);
       openModal();
     } finally {
       setLoading(false);
@@ -78,7 +90,7 @@ const AuthContextProvider = ({ children }) => {
       setCurrentUser(email);
       navigate("/");
     } catch (error) {
-      const errorMessage = getErrorMessage(error);
+      const errorMessage = getErrorMessage(error.response.data);
       setModalError(`Login failed. ${errorMessage}`);
       openModal();
     } finally {
@@ -97,7 +109,7 @@ const AuthContextProvider = ({ children }) => {
         setUserData(userDataObject);
       }
     } catch (error) {
-      const errorMessage = getErrorMessage(error);
+      const errorMessage = getErrorMessage(error.response.data);
       setModalError(`Failed to fetch user data. ${errorMessage}`);
       openModal();
     }
